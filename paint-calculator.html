@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paint Calculator - Calculate Paint Needed for Walls & Ceilings</title>
+  <meta name="description" content="Free paint calculator. Calculate how much paint you need for walls and ceilings. Supports multiple coats, doors and windows deductions.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">H</span>
+      Home<span>Calc</span>.tools
+    </a>
+    <nav>
+      <a href="paint-calculator.html" class="active">Paint</a>
+      <a href="flooring-calculator.html">Flooring</a>
+      <a href="tile-calculator.html">Tile</a>
+      <a href="concrete-calculator.html">Concrete</a>
+      <a href="wallpaper-calculator.html">Wallpaper</a>
+      <a href="decking-calculator.html">Decking</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>/</span>
+  <span>Paint Calculator</span>
+</div>
+
+<section class="calc-page">
+  <h1>🎨 Paint Calculator</h1>
+  <p class="subtitle">Calculate exactly how much paint you need. Enter your room dimensions and get instant results with waste allowance included.</p>
+
+  <div class="calc-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="wall-length">Wall Length (ft)</label>
+        <input type="number" id="wall-length" min="1" max="200" step="0.1" placeholder="e.g. 12">
+      </div>
+      <div class="form-group">
+        <label for="wall-width">Wall Width (ft)</label>
+        <input type="number" id="wall-width" min="1" max="200" step="0.1" placeholder="e.g. 10">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="wall-height">Wall Height (ft)</label>
+        <input type="number" id="wall-height" min="1" max="50" step="0.1" placeholder="e.g. 8">
+      </div>
+      <div class="form-group">
+        <label for="num-doors">Number of Doors</label>
+        <input type="number" id="num-doors" min="0" max="20" step="1" value="1">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="num-windows">Number of Windows</label>
+        <input type="number" id="num-windows" min="0" max="20" step="1" value="1">
+      </div>
+      <div class="form-group">
+        <label for="coats">Number of Coats</label>
+        <select id="coats">
+          <option value="1">1 Coat</option>
+          <option value="2" selected>2 Coats (Recommended)</option>
+          <option value="3">3 Coats</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="paint-type">Paint Type</label>
+        <select id="paint-type">
+          <option value="350">Standard (350 sq ft/gallon)</option>
+          <option value="300">Primer (300 sq ft/gallon)</option>
+          <option value="400">Premium (400 sq ft/gallon)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="include-ceiling">Include Ceiling?</label>
+        <select id="include-ceiling">
+          <option value="yes" selected>Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculatePaint()">Calculate Paint Needed</button>
+  </div>
+
+  <div class="result-box" id="paint-result">
+    <h2>📊 Your Paint Estimate</h2>
+    <div class="result-item">
+      <span class="result-label">Total Wall Area</span>
+      <span class="result-value" id="res-wall-area">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Deductions (Doors & Windows)</span>
+      <span class="result-value" id="res-deductions">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Ceiling Area</span>
+      <span class="result-value" id="res-ceiling">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Total Coats</span>
+      <span class="result-value" id="res-coats">—</span>
+    </div>
+    <div class="result-highlight" id="res-total-gallons">
+      You need <span id="gallons-num">0</span> gallons of paint
+    </div>
+    <div class="result-item" style="margin-top:12px;">
+      <span class="result-label">Recommended Purchase (with 10% extra)</span>
+      <span class="result-value" id="res-purchase">—</span>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>How to Calculate Paint Needed</h2>
+    <p>Painting is one of the most cost-effective ways to refresh a room. But buying too little paint means an extra trip to the store, and buying too much is a waste of money.</p>
+    <p><strong>The basic formula:</strong> Calculate the total wall area (perimeter × height), subtract doors and windows, then divide by the paint's coverage rate (usually 350–400 sq ft per gallon).</p>
+    <h2 style="margin-top:24px;">Paint Coverage Guide</h2>
+    <ul>
+      <li><strong>Standard paint:</strong> Covers ~350 sq ft per gallon</li>
+      <li><strong>Primer:</strong> Covers ~300 sq ft per gallon</li>
+      <li><strong>Premium paint:</strong> Covers ~400 sq ft per gallon</li>
+      <li><strong>Always buy 10% extra</strong> to account for touch-ups and spillage</li>
+    </ul>
+    <h2 style="margin-top:24px;">Tips for a Perfect Paint Job</h2>
+    <ul>
+      <li>Use 2 coats for best coverage, especially for dramatic color changes</li>
+      <li>Prime bare drywall or bare wood before painting</li>
+      <li>Don't forget the ceiling — it's often the largest surface in the room</li>
+      <li>Measure twice, buy once! Use our calculator before heading to the store</li>
+    </ul>
+  </div>
+
+  <div class="info-section">
+    <h2>Related Calculators</h2>
+    <p>
+      <a href="flooring-calculator.html">Flooring Calculator</a> ·
+      <a href="wallpaper-calculator.html">Wallpaper Calculator</a> ·
+      <a href="tile-calculator.html">Tile Calculator</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Home<span>Calc</span>.tools</div>
+      <p class="footer-desc">Free, accurate home improvement calculators for DIY enthusiasts and professionals.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="paint-calculator.html">Paint Calculator</a>
+      <a href="flooring-calculator.html">Flooring Calculator</a>
+      <a href="tile-calculator.html">Tile Calculator</a>
+      <a href="concrete-calculator.html">Concrete Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>More Tools</h4>
+      <a href="wallpaper-calculator.html">Wallpaper Calculator</a>
+      <a href="decking-calculator.html">Decking Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="#">DIY Guides</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 HomeCalc.tools — All calculators are free to use.</span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  if (window.scrollY > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+function calculatePaint() {
+  const length = parseFloat(document.getElementById('wall-length').value) || 0;
+  const width = parseFloat(document.getElementById('wall-width').value) || 0;
+  const height = parseFloat(document.getElementById('wall-height').value) || 0;
+  const doors = parseInt(document.getElementById('num-doors').value) || 0;
+  const windows = parseInt(document.getElementById('num-windows').value) || 0;
+  const coats = parseInt(document.getElementById('coats').value) || 2;
+  const coverage = parseInt(document.getElementById('paint-type').value) || 350;
+  const includeCeiling = document.getElementById('include-ceiling').value === 'yes';
+
+  if (length === 0 || width === 0 || height === 0) {
+    alert('Please enter valid room dimensions.');
+    return;
+  }
+
+  const perimeter = 2 * (length + width);
+  const wallArea = perimeter * height;
+  const doorArea = doors * 20;
+  const windowArea = windows * 15;
+  const totalDeductions = doorArea + windowArea;
+  const ceilingArea = includeCeiling ? (length * width) : 0;
+  const netWallArea = Math.max(0, wallArea - totalDeductions);
+  const totalArea = (netWallArea + ceilingArea) * coats;
+  const gallons = totalArea / coverage;
+  const purchaseGallons = Math.ceil(gallons * 1.1);
+
+  document.getElementById('res-wall-area').textContent = wallArea.toFixed(0) + ' sq ft';
+  document.getElementById('res-deductions').textContent = totalDeductions + ' sq ft';
+  document.getElementById('res-ceiling').textContent = ceilingArea.toFixed(0) + ' sq ft';
+  document.getElementById('res-coats').textContent = coats + ' coat(s)';
+  document.getElementById('gallons-num').textContent = gallons.toFixed(1);
+  document.getElementById('res-purchase').textContent = purchaseGallons + ' gallon(s)';
+
+  document.getElementById('paint-result').classList.add('show');
+  document.getElementById('paint-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+</body>
+</html>

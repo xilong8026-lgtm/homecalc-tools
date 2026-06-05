@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tile Calculator - Calculate Tiles Needed for Any Room</title>
+  <meta name="description" content="Free tile calculator. Calculate how many tiles you need for bathroom, kitchen, or floor projects. Includes waste allowance.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">H</span>
+      Home<span>Calc</span>.tools
+    </a>
+    <nav>
+      <a href="paint-calculator.html">Paint</a>
+      <a href="flooring-calculator.html">Flooring</a>
+      <a href="tile-calculator.html" class="active">Tile</a>
+      <a href="concrete-calculator.html">Concrete</a>
+      <a href="wallpaper-calculator.html">Wallpaper</a>
+      <a href="decking-calculator.html">Decking</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>/</span>
+  <span>Tile Calculator</span>
+</div>
+
+<section class="calc-page">
+  <h1>🔲 Tile Calculator</h1>
+  <p class="subtitle">Calculate exactly how many tiles you need. Works for wall and floor tile projects. Includes waste allowance.</p>
+
+  <div class="calc-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="tile-room-length">Room Length (ft)</label>
+        <input type="number" id="tile-room-length" min="1" max="200" step="0.1" placeholder="e.g. 10">
+      </div>
+      <div class="form-group">
+        <label for="tile-room-width">Room Width (ft)</label>
+        <input type="number" id="tile-room-width" min="1" max="200" step="0.1" placeholder="e.g. 8">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="tile-size">Tile Size</label>
+        <select id="tile-size">
+          <option value="1">1" × 1" (Mosaic)</option>
+          <option value="4">4" × 4"</option>
+          <option value="6">6" × 6"</option>
+          <option value="12" selected>12" × 12" (Standard)</option>
+          <option value="18">18" × 18"</option>
+          <option value="24">24" × 24" (Large format)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="tile-waste">Waste Allowance (%)</label>
+        <select id="tile-waste">
+          <option value="5">5% (Straight lay)</option>
+          <option value="10" selected>10% (Recommended)</option>
+          <option value="15">15% (Diagonal/Complex)</option>
+          <option value="20">20% (Herringbone)</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="tile-num-doors">Door Openings (deduct)</label>
+        <input type="number" id="tile-num-doors" min="0" max="10" step="1" value="1">
+      </div>
+      <div class="form-group">
+        <label for="tiles-per-box">Tiles per Box</label>
+        <input type="number" id="tiles-per-box" min="1" max="100" step="1" placeholder="e.g. 10" value="10">
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculateTile()">Calculate Tiles Needed</button>
+  </div>
+
+  <div class="result-box" id="tile-result">
+    <h2>📊 Your Tile Estimate</h2>
+    <div class="result-item">
+      <span class="result-label">Room Area</span>
+      <span class="result-value" id="res-tile-area">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Tile Size</span>
+      <span class="result-value" id="res-tile-size">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Tiles Needed (with waste)</span>
+      <span class="result-value" id="res-tiles-needed">—</span>
+    </div>
+    <div class="result-highlight" id="res-tile-boxes">
+      Buy <span id="tile-boxes-num">0</span> box(es) of tiles
+    </div>
+    <div class="result-item" style="margin-top:12px;">
+      <span class="result-label">Total Square Feet to Order</span>
+      <span class="result-value" id="res-tile-total-sqft">—</span>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>How to Calculate Tiles Needed</h2>
+    <p>Tiles are tricky because you can't just divide area by tile size — you need to account for cuts, breakage, and pattern layout.</p>
+    <p><strong>The formula:</strong> (Room Length × Room Width) ÷ (Tile Length × Tile Width) × (1 + waste%) = Total tiles needed.</p>
+    <h2 style="margin-top:24px;">Tile Waste Guide</h2>
+    <ul>
+      <li><strong>5% waste:</strong> Large tiles (18"+), straight layout, simple rectangle room</li>
+      <li><strong>10% waste:</strong> Standard 12" tiles, straight layout (Recommended)</li>
+      <li><strong>15% waste:</strong> Diagonal layout or rooms with many corners</li>
+      <li><strong>20% waste:</strong> Herringbone or complex patterns</li>
+    </ul>
+    <h2 style="margin-top:24px;">Tile Layout Patterns</h2>
+    <p><strong>Straight (grid):</strong> Most efficient, least waste. All tiles aligned in rows and columns.</p>
+    <p><strong>Diagonal (45°):</strong> More elegant but 15% more tiles needed due to corner cuts.</p>
+    <p><strong>Herringbone:</strong> Classic parquet look. Requires 20% extra tiles due to many small cuts.</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Related Calculators</h2>
+    <p>
+      <a href="flooring-calculator.html">Flooring Calculator</a> ·
+      <a href="paint-calculator.html">Paint Calculator</a> ·
+      <a href="concrete-calculator.html">Concrete Calculator</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Home<span>Calc</span>.tools</div>
+      <p class="footer-desc">Free, accurate home improvement calculators for DIY enthusiasts and professionals.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="paint-calculator.html">Paint Calculator</a>
+      <a href="flooring-calculator.html">Flooring Calculator</a>
+      <a href="tile-calculator.html">Tile Calculator</a>
+      <a href="concrete-calculator.html">Concrete Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>More Tools</h4>
+      <a href="wallpaper-calculator.html">Wallpaper Calculator</a>
+      <a href="decking-calculator.html">Decking Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="#">DIY Guides</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 HomeCalc.tools — All calculators are free to use.</span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  if (window.scrollY > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+function calculateTile() {
+  const length = parseFloat(document.getElementById('tile-room-length').value) || 0;
+  const width = parseFloat(document.getElementById('tile-room-width').value) || 0;
+  const tileSize = parseInt(document.getElementById('tile-size').value) || 12;
+  const wastePct = parseInt(document.getElementById('tile-waste').value) || 10;
+  const tilesPerBox = parseInt(document.getElementById('tiles-per-box').value) || 10;
+
+  if (length === 0 || width === 0) {
+    alert('Please enter valid room dimensions.');
+    return;
+  }
+
+  const roomArea = length * width;
+  const tileArea = (tileSize / 12) * (tileSize / 12);
+  const tilesNeeded = Math.ceil((roomArea / tileArea) * (1 + wastePct / 100));
+  const boxesNeeded = Math.ceil(tilesNeeded / tilesPerBox);
+
+  document.getElementById('res-tile-area').textContent = roomArea.toFixed(0) + ' sq ft';
+  document.getElementById('res-tile-size').textContent = tileSize + '" × ' + tileSize + '"';
+  document.getElementById('res-tiles-needed').textContent = tilesNeeded + ' tiles';
+  document.getElementById('tile-boxes-num').textContent = boxesNeeded;
+  document.getElementById('res-tile-total-sqft').textContent = (tilesNeeded * tileArea).toFixed(0) + ' sq ft';
+
+  document.getElementById('tile-result').classList.add('show');
+  document.getElementById('tile-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+</body>
+</html>

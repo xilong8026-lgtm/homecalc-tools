@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decking Calculator - Estimate Deck Materials</title>
+  <meta name="description" content="Free decking calculator. Calculate boards, joists, screws and posts needed for your deck project.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">H</span>
+      Home<span>Calc</span>.tools
+    </a>
+    <nav>
+      <a href="paint-calculator.html">Paint</a>
+      <a href="flooring-calculator.html">Flooring</a>
+      <a href="tile-calculator.html">Tile</a>
+      <a href="concrete-calculator.html">Concrete</a>
+      <a href="wallpaper-calculator.html">Wallpaper</a>
+      <a href="decking-calculator.html" class="active">Decking</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>/</span>
+  <span>Decking Calculator</span>
+</div>
+
+<section class="calc-page">
+  <h1>🏡 Decking Calculator</h1>
+  <p class="subtitle">Plan your deck project. Calculate boards, joists, screws, and posts needed for a perfect outdoor space.</p>
+
+  <div class="calc-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="deck-length">Deck Length (ft)</label>
+        <input type="number" id="deck-length" min="1" max="200" step="0.1" placeholder="e.g. 16">
+      </div>
+      <div class="form-group">
+        <label for="deck-width">Deck Width (ft)</label>
+        <input type="number" id="deck-width" min="1" max="200" step="0.1" placeholder="e.g. 12">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="board-width">Board Width</label>
+        <select id="board-width">
+          <option value="3.5">3.5" (Actual 1×4)</option>
+          <option value="5.5" selected>5.5" (Actual 1×6 - Standard)</option>
+          <option value="7.25">7.25" (Actual 1×8)</option>
+          <option value="11.25">11.25" (Actual 1×12)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="joist-spacing">Joist Spacing</label>
+        <select id="joist-spacing">
+          <option value="12">12" OC (Heavy load)</option>
+          <option value="16" selected>16" OC (Standard)</option>
+          <option value="24">24" OC (Light load)</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="deck-height">Deck Height (inches above ground)</label>
+        <input type="number" id="deck-height" min="0" max="120" step="1" placeholder="e.g. 24" value="24">
+      </div>
+      <div class="form-group">
+        <label for="screw-qty">Screws per Board</label>
+        <input type="number" id="screw-qty" min="2" max="20" step="1" value="4">
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculateDecking()">Calculate Deck Materials</button>
+  </div>
+
+  <div class="result-box" id="deck-result">
+    <h2>📊 Your Decking Estimate</h2>
+    <div class="result-item">
+      <span class="result-label">Deck Area</span>
+      <span class="result-value" id="res-deck-area">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Deck Boards Needed</span>
+      <span class="result-value" id="res-boards">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Joists Needed</span>
+      <span class="result-value" id="res-joists">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Support Posts</span>
+      <span class="result-value" id="res-posts">—</span>
+    </div>
+    <div class="result-highlight" id="res-deck-screws">
+      You need <span id="deck-screws-num">0</span> deck screws
+    </div>
+    <div class="result-item" style="margin-top:12px;">
+      <span class="result-label">Estimated Cost (materials only)</span>
+      <span class="result-value" id="res-deck-cost">—</span>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>How to Plan a Deck Project</h2>
+    <p>Building a deck is a rewarding DIY project, but getting the materials right is critical. Order too little and you'll pay for multiple deliveries; order too much and you waste hundreds of dollars.</p>
+    <p><strong>Joist spacing:</strong> 16" on-center is standard for residential decks. Use 12" spacing for hot tubs or heavy planters.</p>
+    <h2 style="margin-top:24px;">Materials Checklist</h2>
+    <ul>
+      <li><strong>Deck boards:</strong> Usually 5/4" × 6" (actual 1" × 5.5")</li>
+      <li><strong>Joists:</strong> 2×8 or 2×10, spaced 16" OC</li>
+      <li><strong>Ledger board:</strong> 2×10 or 2×12, bolts to house wall</li>
+      <li><strong>Posts:</strong> 4×4 or 6×6, concrete footings below frost line</li>
+      <li><strong>Beams:</strong> Double 2×10 or 2×12, supports joist ends</li>
+      <li><strong>Screws:</strong> Use exterior-grade deck screws, ~350 per 100 sq ft</li>
+    </ul>
+    <h2 style="margin-top:24px;">Cost Estimates (2026)</h2>
+    <p><strong>Pressure-treated lumber:</strong> $15–25/sq ft installed (basic)</p>
+    <p><strong>Composite decking:</strong> $30–60/sq ft installed (low maintenance)</p>
+    <p><strong>DIY cost:</strong> $10–18/sq ft (materials only)</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Related Calculators</h2>
+    <p>
+      <a href="concrete-calculator.html">Concrete Calculator</a> ·
+      <a href="flooring-calculator.html">Flooring Calculator</a> ·
+      <a href="paint-calculator.html">Paint Calculator</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Home<span>Calc</span>.tools</div>
+      <p class="footer-desc">Free, accurate home improvement calculators for DIY enthusiasts and professionals.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="paint-calculator.html">Paint Calculator</a>
+      <a href="flooring-calculator.html">Flooring Calculator</a>
+      <a href="tile-calculator.html">Tile Calculator</a>
+      <a href="concrete-calculator.html">Concrete Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>More Tools</h4>
+      <a href="wallpaper-calculator.html">Wallpaper Calculator</a>
+      <a href="decking-calculator.html">Decking Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="#">DIY Guides</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 HomeCalc.tools — All calculators are free to use.</span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  if (window.scrollY > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+function calculateDecking() {
+  const length = parseFloat(document.getElementById('deck-length').value) || 0;
+  const width = parseFloat(document.getElementById('deck-width').value) || 0;
+  const boardWidthIn = parseFloat(document.getElementById('board-width').value) || 5.5;
+  const joistSpacing = parseInt(document.getElementById('joist-spacing').value) || 16;
+
+  if (length === 0 || width === 0) {
+    alert('Please enter valid deck dimensions.');
+    return;
+  }
+
+  const deckArea = length * width;
+  const boardWidthFt = boardWidthIn / 12;
+  const boardsNeeded = Math.ceil(width / boardWidthFt * 1.10);
+  const joistsNeeded = Math.ceil(length * 12 / joistSpacing) + 1;
+  const postsNeeded = Math.max(4, Math.ceil((2 * (length + width)) / 6));
+  const screwsNeeded = Math.ceil(deckArea / 100 * 350);
+  const estimatedCost = deckArea * 12;
+
+  document.getElementById('res-deck-area').textContent = deckArea.toFixed(0) + ' sq ft';
+  document.getElementById('res-boards').textContent = boardsNeeded + ' boards (10% extra included)';
+  document.getElementById('res-joists').textContent = joistsNeeded + ' joists';
+  document.getElementById('res-posts').textContent = postsNeeded + ' posts (4×4)';
+  document.getElementById('deck-screws-num').textContent = screwsNeeded;
+  document.getElementById('res-deck-cost').textContent = '$' + estimatedCost.toFixed(0) + ' (materials only)';
+
+  document.getElementById('deck-result').classList.add('show');
+  document.getElementById('deck-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+</body>
+</html>

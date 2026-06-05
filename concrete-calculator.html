@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concrete Calculator - Estimate Concrete Volume Needed</title>
+  <meta name="description" content="Free concrete calculator. Estimate concrete volume for slabs, footings, and foundations. Get cubic yards and bags needed.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">H</span>
+      Home<span>Calc</span>.tools
+    </a>
+    <nav>
+      <a href="paint-calculator.html">Paint</a>
+      <a href="flooring-calculator.html">Flooring</a>
+      <a href="tile-calculator.html">Tile</a>
+      <a href="concrete-calculator.html" class="active">Concrete</a>
+      <a href="wallpaper-calculator.html">Wallpaper</a>
+      <a href="decking-calculator.html">Decking</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>/</span>
+  <span>Concrete Calculator</span>
+</div>
+
+<section class="calc-page">
+  <h1>🏗️ Concrete Calculator</h1>
+  <p class="subtitle">Estimate exactly how much concrete you need. Works for slabs, footings, and foundations. Get cubic yards or bag counts.</p>
+
+  <div class="calc-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="con-length">Length (ft)</label>
+        <input type="number" id="con-length" min="1" max="500" step="0.1" placeholder="e.g. 20">
+      </div>
+      <div class="form-group">
+        <label for="con-width">Width (ft)</label>
+        <input type="number" id="con-width" min="1" max="500" step="0.1" placeholder="e.g. 10">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="con-depth">Depth (inches)</label>
+        <input type="number" id="con-depth" min="1" max="48" step="0.5" placeholder="e.g. 4">
+      </div>
+      <div class="form-group">
+        <label for="con-units">Order By</label>
+        <select id="con-units">
+          <option value="cubic-yards">Cubic Yards (Recommended)</option>
+          <option value="bags">80lb Bags</option>
+          <option value="cubic-meters">Cubic Meters</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="con-waste">Waste Allowance (%)</label>
+        <select id="con-waste">
+          <option value="5">5% (Flat slab)</option>
+          <option value="10" selected>10% (Recommended)</option>
+          <option value="15">15% (Complex shape)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="con-price">Price per Cubic Yard ($)</label>
+        <input type="number" id="con-price" min="0" max="500" step="1" placeholder="e.g. 150">
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculateConcrete()">Calculate Concrete Needed</button>
+  </div>
+
+  <div class="result-box" id="con-result">
+    <h2>📊 Your Concrete Estimate</h2>
+    <div class="result-item">
+      <span class="result-label">Total Volume</span>
+      <span class="result-value" id="res-volume-raw">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">With Waste Allowance</span>
+      <span class="result-value" id="res-volume-waste">—</span>
+    </div>
+    <div class="result-highlight" id="res-main-result">
+      You need <span id="con-total">0</span> <span id="con-unit-label">cubic yards</span>
+    </div>
+    <div class="result-item" style="margin-top:12px;">
+      <span class="result-label">Estimated Cost</span>
+      <span class="result-value" id="res-cost">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">80lb Bags Equivalent</span>
+      <span class="result-value" id="res-bags">—</span>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>How to Calculate Concrete Needed</h2>
+    <p>Concrete is ordered by the cubic yard (27 cubic feet = 1 cubic yard). The formula is simple: Length × Width × Depth (in feet) ÷ 27 = Cubic Yards.</p>
+    <p><strong>Example:</strong> A 10×10 ft slab at 4 inches deep = 10×10×0.33 ÷ 27 = 1.23 cubic yards. Always order 10% extra.</p>
+    <h2 style="margin-top:24px;">Concrete Depth Guide</h2>
+    <ul>
+      <li><strong>2–3 inches:</strong> Walkways, patios (light use)</li>
+      <li><strong>4 inches:</strong> Driveways, garage slabs (Standard)</li>
+      <li><strong>5–6 inches:</strong> Heavy vehicles, RV pads</li>
+      <li><strong>8+ inches:</strong> Foundation footings</li>
+    </ul>
+    <h2 style="margin-top:24px;">Ready-Mixed vs Bags</h2>
+    <p><strong>Ready-mixed concrete:</strong> Ordered by the cubic yard, delivered by truck. Best for projects over 1 cubic yard (54+ 80lb bags).</p>
+    <p><strong>Bagged concrete:</strong> Sold at hardware stores. One 80lb bag yields ~0.6 cubic feet. Only practical for very small projects (&lt;0.5 cubic yards).</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Related Calculators</h2>
+    <p>
+      <a href="decking-calculator.html">Decking Calculator</a> ·
+      <a href="flooring-calculator.html">Flooring Calculator</a> ·
+      <a href="paint-calculator.html">Paint Calculator</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Home<span>Calc</span>.tools</div>
+      <p class="footer-desc">Free, accurate home improvement calculators for DIY enthusiasts and professionals.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="paint-calculator.html">Paint Calculator</a>
+      <a href="flooring-calculator.html">Flooring Calculator</a>
+      <a href="tile-calculator.html">Tile Calculator</a>
+      <a href="concrete-calculator.html">Concrete Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>More Tools</h4>
+      <a href="wallpaper-calculator.html">Wallpaper Calculator</a>
+      <a href="decking-calculator.html">Decking Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="#">DIY Guides</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 HomeCalc.tools — All calculators are free to use.</span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  if (window.scrollY > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+function calculateConcrete() {
+  const length = parseFloat(document.getElementById('con-length').value) || 0;
+  const width = parseFloat(document.getElementById('con-width').value) || 0;
+  const depthInches = parseFloat(document.getElementById('con-depth').value) || 0;
+  const wastePct = parseInt(document.getElementById('con-waste').value) || 10;
+  const price = parseFloat(document.getElementById('con-price').value) || 0;
+
+  if (length === 0 || width === 0 || depthInches === 0) {
+    alert('Please enter valid dimensions.');
+    return;
+  }
+
+  const depthFt = depthInches / 12;
+  const volumeCuFt = length * width * depthFt;
+  const volumeCuYd = volumeCuFt / 27;
+  const volumeWithWaste = volumeCuYd * (1 + wastePct / 100);
+  const volumeCuM = volumeWithWaste * 0.7646;
+  const bagsNeeded = Math.ceil(volumeWithWaste / 0.022);
+
+  const units = document.getElementById('con-units').value;
+  let mainDisplay, unitLabel;
+
+  if (units === 'cubic-yards') {
+    mainDisplay = Math.ceil(volumeWithWaste * 10) / 10;
+    unitLabel = 'cubic yards';
+  } else if (units === 'bags') {
+    mainDisplay = bagsNeeded;
+    unitLabel = '80lb bag(s)';
+  } else {
+    mainDisplay = Math.ceil(volumeCuM * 100) / 100;
+    unitLabel = 'cubic meters';
+  }
+
+  document.getElementById('res-volume-raw').textContent = volumeCuYd.toFixed(2) + ' cu yd';
+  document.getElementById('res-volume-waste').textContent = volumeWithWaste.toFixed(2) + ' cu yd';
+  document.getElementById('con-total').textContent = mainDisplay;
+  document.getElementById('con-unit-label').textContent = unitLabel;
+  document.getElementById('res-bags').textContent = bagsNeeded + ' bags (80lb)';
+
+  if (price > 0) {
+    const cost = volumeWithWaste * price;
+    document.getElementById('res-cost').textContent = '$' + cost.toFixed(0);
+  } else {
+    document.getElementById('res-cost').textContent = 'Enter price to estimate';
+  }
+
+  document.getElementById('con-result').classList.add('show');
+  document.getElementById('con-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+</body>
+</html>

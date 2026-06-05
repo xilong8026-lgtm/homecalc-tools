@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallpaper Calculator - Calculate Rolls Needed</title>
+  <meta name="description" content="Free wallpaper calculator. Calculate how many rolls of wallpaper you need. Accounts for pattern repeat and door/window deductions.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">H</span>
+      Home<span>Calc</span>.tools
+    </a>
+    <nav>
+      <a href="paint-calculator.html">Paint</a>
+      <a href="flooring-calculator.html">Flooring</a>
+      <a href="tile-calculator.html">Tile</a>
+      <a href="concrete-calculator.html">Concrete</a>
+      <a href="wallpaper-calculator.html" class="active">Wallpaper</a>
+      <a href="decking-calculator.html">Decking</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>/</span>
+  <span>Wallpaper Calculator</span>
+</div>
+
+<section class="calc-page">
+  <h1>🖼️ Wallpaper Calculator</h1>
+  <p class="subtitle">Calculate exactly how many rolls of wallpaper you need. Accounts for pattern repeat and door/window deductions.</p>
+
+  <div class="calc-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="wp-room-length">Room Length (ft)</label>
+        <input type="number" id="wp-room-length" min="1" max="200" step="0.1" placeholder="e.g. 14">
+      </div>
+      <div class="form-group">
+        <label for="wp-room-width">Room Width (ft)</label>
+        <input type="number" id="wp-room-width" min="1" max="200" step="0.1" placeholder="e.g. 12">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="wp-wall-height">Wall Height (ft)</label>
+        <input type="number" id="wp-wall-height" min="1" max="50" step="0.1" placeholder="e.g. 8">
+      </div>
+      <div class="form-group">
+        <label for="wp-num-doors">Number of Doors</label>
+        <input type="number" id="wp-num-doors" min="0" max="20" step="1" value="1">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="wp-num-windows">Number of Windows</label>
+        <input type="number" id="wp-num-windows" min="0" max="20" step="1" value="2">
+      </div>
+      <div class="form-group">
+        <label for="wp-pattern-repeat">Pattern Repeat (inches)</label>
+        <select id="wp-pattern-repeat">
+          <option value="0">No Pattern (Straight Match)</option>
+          <option value="6">6" Repeat</option>
+          <option value="12" selected>12" Repeat (Standard)</option>
+          <option value="18">18" Repeat</option>
+          <option value="24">24" Repeat (Large Pattern)</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="wp-roll-size">Roll Size</label>
+        <select id="wp-roll-size">
+          <option value="56">Standard (56 sq ft / roll)</option>
+          <option value="72">Large (72 sq ft / roll)</option>
+          <option value="36">European (36 sq ft / roll)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="wp-include-openings">Deduct Doors & Windows?</label>
+        <select id="wp-include-openings">
+          <option value="yes" selected>Yes, deduct openings</option>
+          <option value="no">No, keep full wall area</option>
+        </select>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculateWallpaper()">Calculate Wallpaper Needed</button>
+  </div>
+
+  <div class="result-box" id="wp-result">
+    <h2>📊 Your Wallpaper Estimate</h2>
+    <div class="result-item">
+      <span class="result-label">Total Wall Area</span>
+      <span class="result-value" id="res-wp-wall-area">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Deductions (Doors & Windows)</span>
+      <span class="result-value" id="res-wp-deductions">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">Pattern Waste Factor</span>
+      <span class="result-value" id="res-wp-waste-factor">—</span>
+    </div>
+    <div class="result-highlight" id="res-wp-rolls">
+      You need <span id="wp-rolls-num">0</span> rolls of wallpaper
+    </div>
+    <div class="result-item" style="margin-top:12px;">
+      <span class="result-label">Recommended Purchase (with extra)</span>
+      <span class="result-value" id="res-wp-purchase">—</span>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>How to Calculate Wallpaper Needed</h2>
+    <p>Wallpaper calculation is more complex than paint because patterns must match at the seams. A 12" pattern repeat means each strip may waste up to 12" of paper.</p>
+    <p><strong>The formula:</strong> (Room Perimeter × Wall Height − Openings) ÷ Roll Coverage × Pattern Waste Factor = Rolls Needed.</p>
+    <h2 style="margin-top:24px;">Pattern Repeat Guide</h2>
+    <ul>
+      <li><strong>Straight Match (0" repeat):</strong> No waste for pattern — most efficient</li>
+      <li><strong>6" Repeat:</strong> Minimal waste, ~10% extra needed</li>
+      <li><strong>12" Repeat (Standard):</strong> ~15% extra needed (most common)</li>
+      <li><strong>18–24" Repeat:</strong> Large patterns, ~20–25% extra needed</li>
+    </ul>
+    <h2 style="margin-top:24px;">Standard Roll Sizes</h2>
+    <p><strong>Standard (US):</strong> 21" × 33 ft = 56 sq ft per roll. Usually covers ~30–35 sq ft of wall (due to matching waste).</p>
+    <p><strong>European:</strong> 20.5" × 33 ft = 36 sq ft per roll. Covers ~20–25 sq ft of wall.</p>
+    <p><strong>Double Roll:</strong> 27" × 33 ft = 72 sq ft. Covers ~40–50 sq ft of wall.</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Related Calculators</h2>
+    <p>
+      <a href="paint-calculator.html">Paint Calculator</a> ·
+      <a href="tile-calculator.html">Tile Calculator</a> ·
+      <a href="flooring-calculator.html">Flooring Calculator</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Home<span>Calc</span>.tools</div>
+      <p class="footer-desc">Free, accurate home improvement calculators for DIY enthusiasts and professionals.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="paint-calculator.html">Paint Calculator</a>
+      <a href="flooring-calculator.html">Flooring Calculator</a>
+      <a href="tile-calculator.html">Tile Calculator</a>
+      <a href="concrete-calculator.html">Concrete Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>More Tools</h4>
+      <a href="wallpaper-calculator.html">Wallpaper Calculator</a>
+      <a href="decking-calculator.html">Decking Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="#">DIY Guides</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 HomeCalc.tools — All calculators are free to use.</span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  if (window.scrollY > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+function calculateWallpaper() {
+  const length = parseFloat(document.getElementById('wp-room-length').value) || 0;
+  const width = parseFloat(document.getElementById('wp-room-width').value) || 0;
+  const height = parseFloat(document.getElementById('wp-wall-height').value) || 0;
+  const doors = parseInt(document.getElementById('wp-num-doors').value) || 0;
+  const windows = parseInt(document.getElementById('wp-num-windows').value) || 0;
+  const patternIn = parseInt(document.getElementById('wp-pattern-repeat').value) || 0;
+  const rollSqFt = parseInt(document.getElementById('wp-roll-size').value) || 56;
+  const includeOpenings = document.getElementById('wp-include-openings').value === 'yes';
+
+  if (length === 0 || width === 0 || height === 0) {
+    alert('Please enter valid room dimensions.');
+    return;
+  }
+
+  const perimeter = 2 * (length + width);
+  let wallArea = perimeter * height;
+
+  let deductions = 0;
+  if (includeOpenings) {
+    deductions = (doors * 20) + (windows * 15);
+    wallArea = Math.max(0, wallArea - deductions);
+  }
+
+  let wasteFactor = 1.0;
+  if (patternIn === 0) wasteFactor = 1.05;
+  else if (patternIn <= 6) wasteFactor = 1.10;
+  else if (patternIn <= 12) wasteFactor = 1.15;
+  else if (patternIn <= 18) wasteFactor = 1.20;
+  else wasteFactor = 1.25;
+
+  const effectiveCoverage = rollSqFt / wasteFactor * 0.75;
+  const rollsNeeded = Math.ceil(wallArea / effectiveCoverage);
+  const purchaseRolls = rollsNeeded + 1;
+
+  document.getElementById('res-wp-wall-area').textContent = (perimeter * height).toFixed(0) + ' sq ft';
+  document.getElementById('res-wp-deductions').textContent = deductions + ' sq ft';
+  document.getElementById('res-wp-waste-factor').textContent = ((wasteFactor - 1) * 100).toFixed(0) + '%';
+  document.getElementById('wp-rolls-num').textContent = rollsNeeded;
+  document.getElementById('res-wp-purchase').textContent = purchaseRolls + ' roll(s) (includes 1 extra)';
+
+  document.getElementById('wp-result').classList.add('show');
+  document.getElementById('wp-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+</body>
+</html>

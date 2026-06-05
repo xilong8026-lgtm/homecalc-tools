@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flooring Calculator - Estimate Flooring Materials Needed</title>
+  <meta name="description" content="Free flooring calculator. Estimate how much flooring you need for hardwood, laminate, vinyl, or tile projects. Includes 10% waste factor.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">H</span>
+      Home<span>Calc</span>.tools
+    </a>
+    <nav>
+      <a href="paint-calculator.html">Paint</a>
+      <a href="flooring-calculator.html" class="active">Flooring</a>
+      <a href="tile-calculator.html">Tile</a>
+      <a href="concrete-calculator.html">Concrete</a>
+      <a href="wallpaper-calculator.html">Wallpaper</a>
+      <a href="decking-calculator.html">Decking</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>/</span>
+  <span>Flooring Calculator</span>
+</div>
+
+<section class="calc-page">
+  <h1>🪵 Flooring Calculator</h1>
+  <p class="subtitle">Estimate exactly how much flooring you need. Supports hardwood, laminate, vinyl, and tile. Includes waste allowance.</p>
+
+  <div class="calc-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="floor-length">Room Length (ft)</label>
+        <input type="number" id="floor-length" min="1" max="200" step="0.1" placeholder="e.g. 15">
+      </div>
+      <div class="form-group">
+        <label for="floor-width">Room Width (ft)</label>
+        <input type="number" id="floor-width" min="1" max="200" step="0.1" placeholder="e.g. 12">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="waste-pct">Waste Allowance (%)</label>
+        <select id="waste-pct">
+          <option value="5">5% (Minimal waste)</option>
+          <option value="10" selected>10% (Recommended)</option>
+          <option value="15">15% (Complex layout)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="plank-sqft">Plank Size (sq ft per box)</label>
+        <input type="number" id="plank-sqft" min="1" max="100" step="0.1" placeholder="e.g. 20" value="20">
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculateFlooring()">Calculate Flooring Needed</button>
+  </div>
+
+  <div class="result-box" id="floor-result">
+    <h2>📊 Your Flooring Estimate</h2>
+    <div class="result-item">
+      <span class="result-label">Room Area</span>
+      <span class="result-value" id="res-room-area">—</span>
+    </div>
+    <div class="result-item">
+      <span class="result-label">With Waste Allowance</span>
+      <span class="result-value" id="res-waste-area">—</span>
+    </div>
+    <div class="result-highlight" id="res-boxes">
+      You need <span id="boxes-num">0</span> boxes of flooring
+    </div>
+    <div class="result-item" style="margin-top:12px;">
+      <span class="result-label">Total Square Feet to Order</span>
+      <span class="result-value" id="res-total-sqft">—</span>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>How to Calculate Flooring Needed</h2>
+    <p>Flooring is sold by the box, and each box covers a specific square footage. The key to a successful flooring project is ordering the right amount — too little means mismatched batches, too much is wasted money.</p>
+    <h2 style="margin-top:24px;">Waste Allowance Guide</h2>
+    <ul>
+      <li><strong>5% waste:</strong> Simple rectangular rooms, experienced installer</li>
+      <li><strong>10% waste:</strong> Standard rooms with closets (Recommended)</li>
+      <li><strong>15% waste:</strong> Diagonal installation, complex angles, or herringbone pattern</li>
+    </ul>
+    <h2 style="margin-top:24px;">Flooring Types Compared</h2>
+    <p><strong>Hardwood:</strong> Classic, can be refinished, 25+ year lifespan. Usually $4–8/sq ft.</p>
+    <p><strong>Laminate:</strong> Budget-friendly, water-resistant options available. $1–3/sq ft.</p>
+    <p><strong>Vinyl Plank (LVP):</strong> 100% waterproof, great for bathrooms and basements. $2–5/sq ft.</p>
+    <p><strong>Tile:</strong> Most durable, best for kitchens and bathrooms. $3–10/sq ft installed.</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Related Calculators</h2>
+    <p>
+      <a href="tile-calculator.html">Tile Calculator</a> ·
+      <a href="paint-calculator.html">Paint Calculator</a> ·
+      <a href="concrete-calculator.html">Concrete Calculator</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Home<span>Calc</span>.tools</div>
+      <p class="footer-desc">Free, accurate home improvement calculators for DIY enthusiasts and professionals.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="paint-calculator.html">Paint Calculator</a>
+      <a href="flooring-calculator.html">Flooring Calculator</a>
+      <a href="tile-calculator.html">Tile Calculator</a>
+      <a href="concrete-calculator.html">Concrete Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>More Tools</h4>
+      <a href="wallpaper-calculator.html">Wallpaper Calculator</a>
+      <a href="decking-calculator.html">Decking Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="#">DIY Guides</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 HomeCalc.tools — All calculators are free to use.</span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  if (window.scrollY > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+function calculateFlooring() {
+  const length = parseFloat(document.getElementById('floor-length').value) || 0;
+  const width = parseFloat(document.getElementById('floor-width').value) || 0;
+  const wastePct = parseInt(document.getElementById('waste-pct').value) || 10;
+  const sqftPerBox = parseFloat(document.getElementById('plank-sqft').value) || 20;
+
+  if (length === 0 || width === 0) {
+    alert('Please enter valid room dimensions.');
+    return;
+  }
+
+  const roomArea = length * width;
+  const totalArea = roomArea * (1 + wastePct / 100);
+  const boxesNeeded = Math.ceil(totalArea / sqftPerBox);
+
+  document.getElementById('res-room-area').textContent = roomArea.toFixed(0) + ' sq ft';
+  document.getElementById('res-waste-area').textContent = totalArea.toFixed(0) + ' sq ft';
+  document.getElementById('boxes-num').textContent = boxesNeeded;
+  document.getElementById('res-total-sqft').textContent = totalArea.toFixed(0) + ' sq ft';
+
+  document.getElementById('floor-result').classList.add('show');
+  document.getElementById('floor-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+</body>
+</html>
