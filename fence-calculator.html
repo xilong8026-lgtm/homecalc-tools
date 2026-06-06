@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-12Q84R52HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-12Q84R52HT');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fence Calculator - Estimate Fence Materials</title>
+  <meta name="description" content="Free fence calculator. Calculate posts, pickets, rails, and concrete needed for your fence project.">
+  <meta name="keywords" content="fence calculator, fence material calculator, how much fence do I need, wood fence calculator, chain link fence calculator, fence estimator">
+  <meta name="author" content="HomeCalc.tools">
+  <link rel="canonical" href="https://xilong8026-lgtm.github.io/homecalc-tools/fence-calculator.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xilong8026-lgtm.github.io/homecalc-tools/fence-calculator.html">
+  <meta property="og:title" content="Fence Calculator - Estimate Fence Materials">
+  <meta property="og:description" content="Free fence calculator. Calculate posts, pickets, rails, and concrete needed for your fence project.">
+  <meta property="og:image" content="https://xilong8026-lgtm.github.io/homecalc-tools/og-image.jpg">
+  <meta property="og:site_name" content="HomeCalc.tools">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://xilong8026-lgtm.github.io/homecalc-tools/fence-calculator.html">
+  <meta name="twitter:title" content="Fence Calculator - Estimate Fence Materials">
+  <meta name="twitter:description" content="Free fence calculator. Calculate posts, pickets, rails, and concrete needed for your fence project.">
+  <meta name="twitter:image" content="https://xilong8026-lgtm.github.io/homecalc-tools/og-image.jpg">
+
+  <!-- Structured Data - JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Fence Calculator",
+    "url": "https://xilong8026-lgtm.github.io/homecalc-tools/fence-calculator.html",
+    "description": "Calculate posts, pickets, rails, and concrete needed for your fence project.",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">H</span>
+      Home<span>Calc</span>.tools
+    </a>
+    <nav>
+      <a href="paint-calculator.html">Paint</a>
+      <a href="flooring-calculator.html">Flooring</a>
+      <a href="tile-calculator.html">Tile</a>
+      <a href="concrete-calculator.html">Concrete</a>
+      <a href="wallpaper-calculator.html">Wallpaper</a>
+      <a href="decking-calculator.html">Decking</a>
+    </nav>
+  </div>
+</header>
+
+<section class="calc-page">
+  <div class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon-large">🏗️</div>
+      <h1>Fence Calculator</h1>
+      <p class="calc-subtitle">Estimate posts, pickets, rails, and concrete needed for your fence project.</p>
+    </div>
+
+    <div class="unit-toggle">
+      <span>Feet</span>
+      <label class="switch">
+        <input type="checkbox" id="unitToggle">
+        <span class="slider"></span>
+      </label>
+      <span>Meters</span>
+    </div>
+
+    <div class="calc-form">
+      <div class="form-section">
+        <h3>📏 Fence Layout</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fenceLength">Total Fence Length</label>
+            <div class="input-group">
+              <input type="number" id="fenceLength" placeholder="100" min="0" step="0.1">
+              <span class="unit-label" id="lengthUnit">ft</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="postSpacing">Post Spacing</label>
+            <div class="input-group">
+              <input type="number" id="postSpacing" placeholder="8" min="4" max="12" step="0.5" value="8">
+              <span class="unit-label" id="spacingUnit">ft</span>
+            </div>
+            <span class="form-hint">Typical: 6-8 ft for wood, 10 ft for chain link</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fenceHeight">Fence Height</label>
+            <div class="input-group">
+              <input type="number" id="fenceHeight" placeholder="6" min="3" max="12" step="0.5" value="6">
+              <span class="unit-label" id="heightUnit">ft</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fenceStyle">Fence Style</label>
+            <select id="fenceStyle">
+              <option value="wood">Wood Privacy Fence</option>
+              <option value="picket">Picket Fence</option>
+              <option value="chainlink">Chain Link Fence</option>
+              <option value="vinyl">Vinyl Fence</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>🪵 Material Info</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="postDepth">Post Hole Depth</label>
+            <div class="input-group">
+              <input type="number" id="postDepth" placeholder="2" min="1" max="4" step="0.5" value="2">
+              <span class="unit-label" id="depthUnit">ft</span>
+            </div>
+            <span class="form-hint">Below ground: 1/3 to 1/2 of fence height</span>
+          </div>
+          <div class="form-group">
+            <label for="railCount">Rails per Section</label>
+            <div class="input-group">
+              <input type="number" id="railCount" placeholder="2" min="1" max="4" step="1" value="2">
+              <span class="unit-label">rails</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="calc-btn" onclick="calculateFence()">
+        <span>Calculate Materials</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div id="result" class="result-section" style="display:none;">
+      <h2>🏗️ Your Fence Materials Estimate</h2>
+      <div class="result-grid">
+        <div class="result-card">
+          <div class="result-icon">🪵</div>
+          <div class="result-label">Posts Needed</div>
+          <div class="result-value" id="postsNeeded">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">🪵</div>
+          <div class="result-label">Rails Needed</div>
+          <div class="result-value" id="railsNeeded">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">🧱</div>
+          <div class="result-label">Concrete Bags</div>
+          <div class="result-value" id="concreteBags">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">📏</div>
+          <div class="result-label">Pickets/Panels</div>
+          <div class="result-value" id="picketsNeeded">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">🔩</div>
+          <div class="result-label">Estimated Screws/Nails</div>
+          <div class="result-value" id="fastenersNeeded">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">💰</div>
+          <div class="result-label">Estimated Cost*</div>
+          <div class="result-value" id="estimatedCost">—</div>
+        </div>
+      </div>
+      <p class="result-note">*Estimated cost based on $15/post, $8/rail, $6/bag concrete. Actual prices vary by location and material quality.</p>
+    </div>
+
+    <div class="info-section">
+      <h2>💡 Fencing Tips</h2>
+      <p><strong>Post Spacing:</strong> 6-8 ft is standard for wood fences. Dig holes 1/3 to 1/2 the fence height (e.g., 2-3 ft deep for a 6 ft fence). Use concrete to set posts for longevity.</p>
+      <p><strong>Material Choices:</strong> Pressure-treated pine is affordable ($15-25/post). Cedar lasts longer but costs more ($25-40/post). Vinyl is low-maintenance but expensive upfront ($30-50/section).</p>
+      <p><strong>Permits:</strong> Many cities require permits for fences over 6 ft tall. Check local building codes before starting.Neighbors may share costs if the fence is on the property line.</p>
+      <p><strong>Gates:</strong> Don't forget to budget for gates! A single walk gate needs 2 posts and special hardware ($100-300). Double drive gates cost $500-1500.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Home<span>Calc</span>.tools</div>
+      <p class="footer-desc">Free, accurate home improvement calculators for DIY enthusiasts and professionals.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 HomeCalc.tools — All calculators are free to use.</span>
+  </div>
+</footer>
+
+<script>
+// Unit toggle
+let isMetric = false;
+document.getElementById('unitToggle').addEventListener('change', function() {
+  isMetric = this.checked;
+  document.getElementById('lengthUnit').textContent = isMetric ? 'm' : 'ft';
+  document.getElementById('spacingUnit').textContent = isMetric ? 'm' : 'ft';
+  document.getElementById('heightUnit').textContent = isMetric ? 'm' : 'ft';
+  document.getElementById('depthUnit').textContent = isMetric ? 'm' : 'ft';
+});
+
+function calculateFence() {
+  const length = parseFloat(document.getElementById('fenceLength').value) || 0;
+  const postSpacing = parseFloat(document.getElementById('postSpacing').value) || 8;
+  const fenceHeight = parseFloat(document.getElementById('fenceHeight').value) || 6;
+  const postDepth = parseFloat(document.getElementById('postDepth').value) || 2;
+  const railCount = parseFloat(document.getElementById('railCount').value) || 2;
+  const fenceStyle = document.getElementById('fenceStyle').value;
+
+  if (length <= 0) {
+    alert('Please enter a valid fence length.');
+    return;
+  }
+
+  // Convert to feet if metric
+  let lengthFt = isMetric ? length * 3.28084 : length;
+  let spacingFt = isMetric ? postSpacing * 3.28084 : postSpacing;
+
+  // Calculate posts (always one more than sections)
+  const postsNeeded = Math.ceil(lengthFt / spacingFt) + 1;
+
+  // Calculate rails
+  const sections = postsNeeded - 1;
+  const railsNeeded = sections * railCount;
+
+  // Calculate concrete (1 bag per post hole, 40lb bag)
+  const concreteBags = postsNeeded;
+
+  // Calculate pickets/panels based on style
+  let picketsNeeded = 'N/A';
+  if (fenceStyle === 'wood' || fenceStyle === 'picket') {
+    // Assume 5.5" picket + 0.5" spacing = 6" per picket
+    picketsNeeded = Math.ceil(lengthFt * 2); // 2 pickets per foot
+  } else if (fenceStyle === 'vinyl') {
+    // Vinyl panels typically 6-8 ft wide
+    picketsNeeded = Math.ceil(lengthFt / 8) + ' panels';
+  } else if (fenceStyle === 'chainlink') {
+    picketsNeeded = Math.ceil(lengthFt / 10) + ' rolls (50 ft each)';
+  }
+
+  // Fasteners (screws/nails)
+  const fastenersNeeded = railsNeeded * 8 + (typeof picketsNeeded === 'number' ? picketsNeeded * 4 : 0);
+
+  // Estimated cost
+  const estimatedCost = postsNeeded * 15 + railsNeeded * 8 + concreteBags * 6;
+
+  // Display results
+  document.getElementById('postsNeeded').textContent = postsNeeded + ' posts';
+  document.getElementById('railsNeeded').textContent = railsNeeded + ' rails';
+  document.getElementById('concreteBags').textContent = concreteBags + ' bags (40lb)';
+  document.getElementById('picketsNeeded').textContent = picketsNeeded;
+  document.getElementById('fastenersNeeded').textContent = fastenersNeeded + ' screws';
+  document.getElementById('estimatedCost').textContent = '$' + estimatedCost.toLocaleString();
+
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

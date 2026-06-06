@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-12Q84R52HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-12Q84R52HT');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drywall Calculator - Estimate Drywall Sheets & Materials</title>
+  <meta name="description" content="Free drywall calculator. Calculate drywall sheets, joint compound, tape, and screws needed for your project.">
+  <meta name="keywords" content="drywall calculator, sheetrock calculator, drywall sheets calculator, how much drywall do I need, drywall estimator">
+  <meta name="author" content="HomeCalc.tools">
+  <link rel="canonical" href="https://xilong8026-lgtm.github.io/homecalc-tools/drywall-calculator.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xilong8026-lgtm.github.io/homecalc-tools/drywall-calculator.html">
+  <meta property="og:title" content="Drywall Calculator - Estimate Drywall Sheets & Materials">
+  <meta property="og:description" content="Free drywall calculator. Calculate drywall sheets, joint compound, tape, and screws needed.">
+  <meta property="og:image" content="https://xilong8026-lgtm.github.io/homecalc-tools/og-image.jpg">
+  <meta property="og:site_name" content="HomeCalc.tools">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://xilong8026-lgtm.github.io/homecalc-tools/drywall-calculator.html">
+  <meta name="twitter:title" content="Drywall Calculator - Estimate Drywall Sheets & Materials">
+  <meta name="twitter:description" content="Free drywall calculator. Calculate drywall sheets, joint compound, tape, and screws needed.">
+  <meta name="twitter:image" content="https://xilong8026-lgtm.github.io/homecalc-tools/og-image.jpg">
+
+  <!-- Structured Data - JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Drywall Calculator",
+    "url": "https://xilong8026-lgtm.github.io/homecalc-tools/drywall-calculator.html",
+    "description": "Calculate drywall sheets, joint compound, tape, and screws needed for your project.",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">H</span>
+      Home<span>Calc</span>.tools
+    </a>
+    <nav>
+      <a href="paint-calculator.html">Paint</a>
+      <a href="flooring-calculator.html">Flooring</a>
+      <a href="tile-calculator.html">Tile</a>
+      <a href="concrete-calculator.html">Concrete</a>
+      <a href="wallpaper-calculator.html">Wallpaper</a>
+      <a href="decking-calculator.html">Decking</a>
+    </nav>
+  </div>
+</header>
+
+<section class="calc-page">
+  <div class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon-large">🧱</div>
+      <h1>Drywall Calculator</h1>
+      <p class="calc-subtitle">Estimate drywall sheets, joint compound, tape, and screws needed for your project.</p>
+    </div>
+
+    <div class="unit-toggle">
+      <span>Feet</span>
+      <label class="switch">
+        <input type="checkbox" id="unitToggle">
+        <span class="slider"></span>
+      </label>
+      <span>Meters</span>
+    </div>
+
+    <div class="calc-form">
+      <div class="form-section">
+        <h3>📏 Room Dimensions</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="roomLength">Room Length</label>
+            <div class="input-group">
+              <input type="number" id="roomLength" placeholder="12" min="0" step="0.1">
+              <span class="unit-label" id="lengthUnit">ft</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="roomWidth">Room Width</label>
+            <div class="input-group">
+              <input type="number" id="roomWidth" placeholder="10" min="0" step="0.1">
+              <span class="unit-label" id="widthUnit">ft</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="wallHeight">Wall Height</label>
+            <div class="input-group">
+              <input type="number" id="wallHeight" placeholder="8" min="0" step="0.1" value="8">
+              <span class="unit-label" id="heightUnit">ft</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="sheetSize">Drywall Sheet Size</label>
+            <select id="sheetSize">
+              <option value="32">4' × 8' (32 sq ft) - Standard</option>
+              <option value="48">4' × 12' (48 sq ft) - Tall walls</option>
+              <option value="40">4' × 10' (40 sq ft)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>🚪 Openings (Doors & Windows)</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="doorCount">Number of Doors</label>
+            <div class="input-group">
+              <input type="number" id="doorCount" placeholder="1" min="0" step="1" value="1">
+              <span class="unit-label">doors</span>
+            </div>
+            <span class="form-hint">Standard door: ~21 sq ft</span>
+          </div>
+          <div class="form-group">
+            <label for="windowCount">Number of Windows</label>
+            <div class="input-group">
+              <input type="number" id="windowCount" placeholder="2" min="0" step="1" value="2">
+              <span class="unit-label">windows</span>
+            </div>
+            <span class="form-hint">Standard window: ~12 sq ft</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="calc-btn" onclick="calculateDrywall()">
+        <span>Calculate Materials</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div id="result" class="result-section" style="display:none;">
+      <h2>🧱 Your Drywall Materials Estimate</h2>
+      <div class="result-grid">
+        <div class="result-card">
+          <div class="result-icon">🧱</div>
+          <div class="result-label">Total Wall Area</div>
+          <div class="result-value" id="wallArea">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">📦</div>
+          <div class="result-label">Drywall Sheets</div>
+          <div class="result-value" id="sheetsNeeded">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">🪣</div>
+          <div class="result-label">Joint Compound</div>
+          <div class="result-value" id="compoundNeeded">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">📏</div>
+          <div class="result-label">Joint Tape</div>
+          <div class="result-value" id="tapeNeeded">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">🔩</div>
+          <div class="result-label">Drywall Screws</div>
+          <div class="result-value" id="screwsNeeded">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">💰</div>
+          <div class="result-label">Estimated Cost*</div>
+          <div class="result-value" id="estimatedCost">—</div>
+        </div>
+      </div>
+      <p class="result-note">*Estimated cost based on $12/sheet, $15/bucket compound, $5/roll tape, $8/screw box. Actual prices vary by location and quality.</p>
+    </div>
+
+    <div class="info-section">
+      <h2>💡 Drywall Tips</h2>
+      <p><strong>Sheet Orientation:</strong> Hang sheets horizontally ("vertical" orientation) for fewer joints on tall walls. Use 12-ft sheets for 9-ft ceilings to minimize joints.</p>
+      <p><strong>Waste Allowance:</strong> Order 10-15% extra sheets for cuts, mistakes, and future repairs. Small bathrooms may need more due to many cut pieces.</p>
+      <p><strong>Joint Compound:</strong> One 4.5-gallon bucket covers ~400-500 sq ft of drywall. Buy "all-purpose" for taping, then "topping" for finish coats.</p>
+      <p><strong>Screws vs Nails:</strong> Use 1-1/4" drywall screws (not nails) for stronger hold. Space screws 8" apart on walls, 6" on ceilings. One 25-lb box covers ~1,000 sq ft.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Home<span>Calc</span>.tools</div>
+      <p class="footer-desc">Free, accurate home improvement calculators for DIY enthusiasts and professionals.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 HomeCalc.tools — All calculators are free to use.</span>
+  </div>
+</footer>
+
+<script>
+// Unit toggle
+let isMetric = false;
+document.getElementById('unitToggle').addEventListener('change', function() {
+  isMetric = this.checked;
+  document.getElementById('lengthUnit').textContent = isMetric ? 'm' : 'ft';
+  document.getElementById('widthUnit').textContent = isMetric ? 'm' : 'ft';
+  document.getElementById('heightUnit').textContent = isMetric ? 'm' : 'ft';
+});
+
+function calculateDrywall() {
+  const length = parseFloat(document.getElementById('roomLength').value) || 0;
+  const width = parseFloat(document.getElementById('roomWidth').value) || 0;
+  const height = parseFloat(document.getElementById('wallHeight').value) || 8;
+  const sheetSize = parseFloat(document.getElementById('sheetSize').value) || 32;
+  const doorCount = parseFloat(document.getElementById('doorCount').value) || 0;
+  const windowCount = parseFloat(document.getElementById('windowCount').value) || 0;
+
+  if (length <= 0 || width <= 0) {
+    alert('Please enter valid room dimensions.');
+    return;
+  }
+
+  // Convert to feet if metric
+  let lengthFt = isMetric ? length * 3.28084 : length;
+  let widthFt = isMetric ? width * 3.28084 : width;
+  let heightFt = isMetric ? height * 3.28084 : height;
+
+  // Calculate total wall area (4 walls)
+  const perimeter = 2 * (lengthFt + widthFt);
+  let totalWallArea = perimeter * heightFt;
+
+  // Subtract doors and windows
+  const doorArea = doorCount * 21; // standard door ~21 sq ft
+  const windowArea = windowCount * 12; // standard window ~12 sq ft
+  totalWallArea = Math.max(0, totalWallArea - doorArea - windowArea);
+
+  // Calculate sheets needed (add 10% waste)
+  const sheetsNeeded = Math.ceil((totalWallArea / sheetSize) * 1.10);
+
+  // Joint compound (1 gallon per 100 sq ft)
+  const compoundNeeded = Math.ceil(totalWallArea / 100) + ' buckets (4.5 gal)';
+
+  // Joint tape (1 ft per 4 sq ft of wall)
+  const tapeFt = Math.ceil(totalWallArea / 4);
+  const tapeRolls = Math.ceil(tapeFt / 500) + ' rolls (500 ft each)';
+
+  // Screws (1 lb per 100 sq ft)
+  const screwsLbs = Math.ceil(totalWallArea / 100) + ' lbs';
+
+  // Estimated cost
+  const estimatedCost = sheetsNeeded * 12 + (Math.ceil(totalWallArea / 100) * 15) + (Math.ceil(tapeFt / 500) * 5) + (Math.ceil(totalWallArea / 100) * 8);
+
+  // Display results
+  const areaDisplay = isMetric
+    ? (totalWallArea / 10.764).toFixed(1) + ' m²'
+    : totalWallArea.toFixed(1) + ' sq ft';
+  document.getElementById('wallArea').textContent = areaDisplay;
+  document.getElementById('sheetsNeeded').textContent = sheetsNeeded + ' sheets (4×' + (sheetSize === 32 ? '8' : sheetSize === 48 ? '12' : '10') + ')';
+  document.getElementById('compoundNeeded').textContent = compoundNeeded;
+  document.getElementById('tapeNeeded').textContent = tapeRolls;
+  document.getElementById('screwsNeeded').textContent = screwsLbs;
+  document.getElementById('estimatedCost').textContent = '$' + estimatedCost.toLocaleString();
+
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

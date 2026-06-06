@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-12Q84R52HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-12Q84R52HT');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gravel Calculator - Estimate Gravel for Driveways & Patios</title>
+  <meta name="description" content="Free gravel calculator. Calculate how much gravel you need for driveways, patios, and landscaping projects. Includes depth recommendations.">
+  <meta name="keywords" content="gravel calculator, how much gravel do I need, gravel estimator, driveway gravel calculator, landscaping gravel calculator, crushed stone calculator">
+  <meta name="author" content="HomeCalc.tools">
+  <link rel="canonical" href="https://xilong8026-lgtm.github.io/homecalc-tools/gravel-calculator.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xilong8026-lgtm.github.io/homecalc-tools/gravel-calculator.html">
+  <meta property="og:title" content="Gravel Calculator - Estimate Gravel for Driveways & Patios">
+  <meta property="og:description" content="Free gravel calculator. Calculate how much gravel you need for driveways, patios, and landscaping projects.">
+  <meta property="og:image" content="https://xilong8026-lgtm.github.io/homecalc-tools/og-image.jpg">
+  <meta property="og:site_name" content="HomeCalc.tools">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://xilong8026-lgtm.github.io/homecalc-tools/gravel-calculator.html">
+  <meta name="twitter:title" content="Gravel Calculator - Estimate Gravel for Driveways & Patios">
+  <meta name="twitter:description" content="Free gravel calculator. Calculate how much gravel you need for driveways, patios, and landscaping projects.">
+  <meta name="twitter:image" content="https://xilong8026-lgtm.github.io/homecalc-tools/og-image.jpg">
+
+  <!-- Structured Data - JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Gravel Calculator",
+    "url": "https://xilong8026-lgtm.github.io/homecalc-tools/gravel-calculator.html",
+    "description": "Calculate how much gravel you need for driveways, patios, and landscaping projects.",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">H</span>
+      Home<span>Calc</span>.tools
+    </a>
+    <nav>
+      <a href="paint-calculator.html">Paint</a>
+      <a href="flooring-calculator.html">Flooring</a>
+      <a href="tile-calculator.html">Tile</a>
+      <a href="concrete-calculator.html">Concrete</a>
+      <a href="wallpaper-calculator.html">Wallpaper</a>
+      <a href="decking-calculator.html">Decking</a>
+    </nav>
+  </div>
+</header>
+
+<section class="calc-page">
+  <div class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon-large">🪨</div>
+      <h1>Gravel Calculator</h1>
+      <p class="calc-subtitle">Estimate gravel needed for driveways, patios, and landscaping projects. Includes depth recommendations.</p>
+    </div>
+
+    <div class="unit-toggle">
+      <span>Feet</span>
+      <label class="switch">
+        <input type="checkbox" id="unitToggle">
+        <span class="slider"></span>
+      </label>
+      <span>Meters</span>
+    </div>
+
+    <div class="calc-form">
+      <div class="form-section">
+        <h3>📏 Area Dimensions</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="length">Length</label>
+            <div class="input-group">
+              <input type="number" id="length" placeholder="20" min="0" step="0.1">
+              <span class="unit-label" id="lengthUnit">ft</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="width">Width</label>
+            <div class="input-group">
+              <input type="number" id="width" placeholder="10" min="0" step="0.1">
+              <span class="unit-label" id="widthUnit">ft</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="depth">Gravel Depth</label>
+            <div class="input-group">
+              <input type="number" id="depth" placeholder="4" min="0" step="0.5" value="4">
+              <span class="unit-label" id="depthUnit">in</span>
+            </div>
+            <span class="form-hint">Driveways: 4-6″, Walkways: 3-4″, Patios: 2-3″</span>
+          </div>
+          <div class="form-group">
+            <label for="gravelType">Gravel Type</label>
+            <select id="gravelType">
+              <option value="1.35">Crushed Stone (1.35 tons/cu yd)</option>
+              <option value="1.4">Pea Gravel (1.4 tons/cu yd)</option>
+              <option value="1.25">River Rock (1.25 tons/cu yd)</option>
+              <option value="1.5">Decomposed Granite (1.5 tons/cu yd)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>🚚 Delivery Info</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="truckCapacity">Truck Capacity (optional)</label>
+            <div class="input-group">
+              <input type="number" id="truckCapacity" placeholder="10" min="0" step="0.5">
+              <span class="unit-label">tons</span>
+            </div>
+            <span class="form-hint">Leave blank to skip truck calculation</span>
+          </div>
+          <div class="form-group">
+            <label for="pricePerTon">Price per Ton (optional)</label>
+            <div class="input-group">
+              <span class="input-prefix">$</span>
+              <input type="number" id="pricePerTon" placeholder="50" min="0" step="1">
+              <span class="unit-label">/ton</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="calc-btn" onclick="calculateGravel()">
+        <span>Calculate Gravel</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div id="result" class="result-section" style="display:none;">
+      <h2>🪨 Your Gravel Estimate</h2>
+      <div class="result-grid">
+        <div class="result-card">
+          <div class="result-icon">📐</div>
+          <div class="result-label">Area</div>
+          <div class="result-value" id="area">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">🪨</div>
+          <div class="result-label">Volume (Cubic Yards)</div>
+          <div class="result-value" id="volume">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">⚖️</div>
+          <div class="result-label">Weight (Tons)</div>
+          <div class="result-value" id="weight">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">🚚</div>
+          <div class="result-label">Truck Loads</div>
+          <div class="result-value" id="truckLoads">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">💰</div>
+          <div class="result-label">Estimated Cost</div>
+          <div class="result-value" id="estimatedCost">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>💡 Gravel Tips</h2>
+      <p><strong>Depth Guidelines:</strong> Driveways need 4-6 inches of gravel over a compacted base. Walkways and patios can use 2-3 inches. Always add 10% extra for compaction and spillage.</p>
+      <p><strong>Base Preparation:</strong> For driveways, excavate 8-12 inches and lay geotextile fabric. Add 4-6 inches of crushed stone base, then 2-3 inches of top gravel.</p>
+      <p><strong>Delivery:</strong> Most gravel companies have a minimum order (usually 10-20 tons). A standard dump truck holds 10-16 tons. Order a bit extra — leftover gravel is useful for repairs.</p>
+      <p><strong>Types of Gravel:</strong> #57 crushed stone (3/4″) is best for driveways. Pea gravel (1/4″-1/2″) is better for walkways and drainage. Check local availability and prices.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Home<span>Calc</span>.tools</div>
+      <p class="footer-desc">Free, accurate home improvement calculators for DIY enthusiasts and professionals.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 HomeCalc.tools — All calculators are free to use.</span>
+  </div>
+</footer>
+
+<script>
+// Unit toggle
+let isMetric = false;
+document.getElementById('unitToggle').addEventListener('change', function() {
+  isMetric = this.checked;
+  document.getElementById('lengthUnit').textContent = isMetric ? 'm' : 'ft';
+  document.getElementById('widthUnit').textContent = isMetric ? 'm' : 'ft';
+  document.getElementById('depthUnit').textContent = isMetric ? 'cm' : 'in';
+});
+
+function calculateGravel() {
+  const length = parseFloat(document.getElementById('length').value) || 0;
+  const width = parseFloat(document.getElementById('width').value) || 0;
+  const depth = parseFloat(document.getElementById('depth').value) || 4;
+  const gravelDensity = parseFloat(document.getElementById('gravelType').value);
+  const truckCapacity = parseFloat(document.getElementById('truckCapacity').value) || 0;
+  const pricePerTon = parseFloat(document.getElementById('pricePerTon').value) || 0;
+
+  if (length <= 0 || width <= 0) {
+    alert('Please enter valid dimensions.');
+    return;
+  }
+
+  // Convert to feet if metric
+  let lengthFt = isMetric ? length * 3.28084 : length;
+  let widthFt = isMetric ? width * 3.28084 : width;
+  let depthFt = isMetric ? depth / 12 : depth / 12; // inches to feet
+
+  // Calculate volume in cubic yards
+  const areaSqFt = lengthFt * widthFt;
+  const volumeCuYd = (areaSqFt * depthFt) / 27;
+
+  // Calculate weight in tons
+  const weightTons = volumeCuYd * gravelDensity;
+
+  // Truck loads
+  let truckLoads = 'N/A';
+  if (truckCapacity > 0) {
+    truckLoads = Math.ceil(weightTons / truckCapacity) + ' loads';
+  }
+
+  // Estimated cost
+  let estimatedCost = 'N/A';
+  if (pricePerTon > 0) {
+    estimatedCost = '$' + (weightTons * pricePerTon).toFixed(2);
+  }
+
+  // Display results
+  const areaDisplay = isMetric
+    ? (length * width).toFixed(1) + ' m²'
+    : areaSqFt.toFixed(1) + ' sq ft';
+  document.getElementById('area').textContent = areaDisplay;
+  document.getElementById('volume').textContent = volumeCuYd.toFixed(2) + ' cu yd';
+  document.getElementById('weight').textContent = weightTons.toFixed(2) + ' tons';
+  document.getElementById('truckLoads').textContent = truckLoads;
+  document.getElementById('estimatedCost').textContent = estimatedCost;
+
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

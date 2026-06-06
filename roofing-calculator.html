@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-12Q84R52HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-12Q84R52HT');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roofing Calculator - Estimate Shingles & Materials</title>
+  <meta name="description" content="Free roofing calculator. Calculate shingles, underlayment, and roofing materials needed. Supports gable and hip roof designs.">
+  <meta name="keywords" content="roofing calculator, shingle calculator, roof shingles calculator, how many shingles do I need, roofing material estimator, roof area calculator">
+  <meta name="author" content="HomeCalc.tools">
+  <link rel="canonical" href="https://xilong8026-lgtm.github.io/homecalc-tools/roofing-calculator.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xilong8026-lgtm.github.io/homecalc-tools/roofing-calculator.html">
+  <meta property="og:title" content="Roofing Calculator - Estimate Shingles & Materials">
+  <meta property="og:description" content="Free roofing calculator. Calculate shingles, underlayment, and roofing materials needed. Supports gable and hip roof designs.">
+  <meta property="og:image" content="https://xilong8026-lgtm.github.io/homecalc-tools/og-image.jpg">
+  <meta property="og:site_name" content="HomeCalc.tools">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://xilong8026-lgtm.github.io/homecalc-tools/roofing-calculator.html">
+  <meta name="twitter:title" content="Roofing Calculator - Estimate Shingles & Materials">
+  <meta name="twitter:description" content="Free roofing calculator. Calculate shingles, underlayment, and roofing materials needed.">
+  <meta name="twitter:image" content="https://xilong8026-lgtm.github.io/homecalc-tools/og-image.jpg">
+
+  <!-- Structured Data - JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Roofing Calculator",
+    "url": "https://xilong8026-lgtm.github.io/homecalc-tools/roofing-calculator.html",
+    "description": "Calculate shingles, underlayment, and roofing materials needed for your roof project.",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">H</span>
+      Home<span>Calc</span>.tools
+    </a>
+    <nav>
+      <a href="paint-calculator.html">Paint</a>
+      <a href="flooring-calculator.html">Flooring</a>
+      <a href="tile-calculator.html">Tile</a>
+      <a href="concrete-calculator.html">Concrete</a>
+      <a href="wallpaper-calculator.html">Wallpaper</a>
+      <a href="decking-calculator.html">Decking</a>
+    </nav>
+  </div>
+</header>
+
+<section class="calc-page">
+  <div class="calc-container">
+    <div class="calc-header">
+      <div class="calc-icon-large">🏠</div>
+      <h1>Roofing Calculator</h1>
+      <p class="calc-subtitle">Estimate shingles, underlayment, and roofing materials needed for your roof project.</p>
+    </div>
+
+    <div class="unit-toggle">
+      <span>Feet</span>
+      <label class="switch">
+        <input type="checkbox" id="unitToggle">
+        <span class="slider"></span>
+      </label>
+      <span>Meters</span>
+    </div>
+
+    <div class="calc-form">
+      <div class="form-section">
+        <h3>🏡 Roof Dimensions</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="roofLength">Roof Length</label>
+            <div class="input-group">
+              <input type="number" id="roofLength" placeholder="40" min="0" step="0.1">
+              <span class="unit-label" id="lengthUnit">ft</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="roofWidth">Roof Width</label>
+            <div class="input-group">
+              <input type="number" id="roofWidth" placeholder="30" min="0" step="0.1">
+              <span class="unit-label" id="widthUnit">ft</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="roofPitch">Roof Pitch</label>
+            <select id="roofPitch">
+              <option value="1.06">Flat (1:12)</option>
+              <option value="1.12">Low (2:12)</option>
+              <option value="1.20">3:12</option>
+              <option value="1.30">4:12</option>
+              <option value="1.41" selected>5:12 (Common)</option>
+              <option value="1.54">6:12</option>
+              <option value="1.68">7:12</option>
+              <option value="1.85">8:12</option>
+              <option value="2.02">9:12</option>
+              <option value="2.20">10:12</option>
+              <option value="2.40">11:12</option>
+              <option value="2.61">12:12 (Steep)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="roofType">Roof Type</label>
+            <select id="roofType">
+              <option value="gable">Gable Roof (Two sides)</option>
+              <option value="hip">Hip Roof (Four sides)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>📦 Shingle Info</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="shingleCoverage">Shingle Coverage per Bundle</label>
+            <div class="input-group">
+              <input type="number" id="shingleCoverage" placeholder="33.3" min="0" step="0.1" value="33.3">
+              <span class="unit-label">sq ft/bundle</span>
+            </div>
+            <span class="form-hint">Standard 3-tab: 33.3 sq ft/bundle</span>
+          </div>
+          <div class="form-group">
+            <label for="wastePercent">Waste Allowance</label>
+            <div class="input-group">
+              <input type="number" id="wastePercent" placeholder="10" min="0" max="50" step="1" value="10">
+              <span class="unit-label">%</span>
+            </div>
+            <span class="form-hint">10-15% for simple roofs, 15-20% for complex</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="calc-btn" onclick="calculateRoofing()">
+        <span>Calculate Materials</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div id="result" class="result-section" style="display:none;">
+      <h2>📊 Your Roofing Materials Estimate</h2>
+      <div class="result-grid">
+        <div class="result-card">
+          <div class="result-icon">📐</div>
+          <div class="result-label">Roof Area</div>
+          <div class="result-value" id="roofArea">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">📦</div>
+          <div class="result-label">Shingle Bundles Needed</div>
+          <div class="result-value" id="shingleBundles">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">📦</div>
+          <div class="result-label">Shingle Squares Needed</div>
+          <div class="result-value" id="shingleSquares">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">🛡️</div>
+          <div class="result-label">Underlayment Rolls</div>
+          <div class="result-value" id="underlaymentRolls">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">🔨</div>
+          <div class="result-label">Roofing Nails (lbs)</div>
+          <div class="result-value" id="nailsNeeded">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-icon">💰</div>
+          <div class="result-label">Estimated Cost*</div>
+          <div class="result-value" id="estimatedCost">—</div>
+        </div>
+      </div>
+      <p class="result-note">*Estimated cost based on $30/bundle for shingles and $50/roll for underlayment. Actual prices vary by location and quality. Always get multiple quotes.</p>
+    </div>
+
+    <div class="info-section">
+      <h2>💡 Roofing Tips</h2>
+      <p><strong>Shingle Coverage:</strong> 3-tab shingles typically cover 33.3 sq ft per bundle (3 bundles = 1 "square" = 100 sq ft). Architectural shingles may cover 25-33 sq ft per bundle.</p>
+      <p><strong>Waste Allowance:</strong> Add 10-15% for simple gable roofs, 15-20% for hip roofs or complex designs with many valleys and dormers.</p>
+      <p><strong>Underlayment:</strong> Standard 15 lb felt covers ~400 sq ft per roll. Synthetic underlayment covers ~1000 sq ft per roll. You'll need one or the other, not both.</p>
+      <p><strong>Safety First:</strong> Roofing is dangerous work. Consider hiring professionals for steep roofs (pitch > 8:12) or if you're uncomfortable with heights.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Home<span>Calc</span>.tools</div>
+      <p class="footer-desc">Free, accurate home improvement calculators for DIY enthusiasts and professionals.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 HomeCalc.tools — All calculators are free to use.</span>
+  </div>
+</footer>
+
+<script>
+// Unit toggle
+let isMetric = false;
+document.getElementById('unitToggle').addEventListener('change', function() {
+  isMetric = this.checked;
+  document.getElementById('lengthUnit').textContent = isMetric ? 'm' : 'ft';
+  document.getElementById('widthUnit').textContent = isMetric ? 'm' : 'ft';
+});
+
+function calculateRoofing() {
+  const length = parseFloat(document.getElementById('roofLength').value) || 0;
+  const width = parseFloat(document.getElementById('roofWidth').value) || 0;
+  const pitchFactor = parseFloat(document.getElementById('roofPitch').value);
+  const roofType = document.getElementById('roofType').value;
+  const shingleCoverage = parseFloat(document.getElementById('shingleCoverage').value) || 33.3;
+  const wastePercent = parseFloat(document.getElementById('wastePercent').value) || 10;
+
+  if (length <= 0 || width <= 0) {
+    alert('Please enter valid roof dimensions.');
+    return;
+  }
+
+  // Convert to feet if metric
+  let lengthFt = isMetric ? length * 3.28084 : length;
+  let widthFt = isMetric ? width * 3.28084 : width;
+
+  // Calculate roof area
+  const baseArea = lengthFt * widthFt;
+  let roofArea = baseArea * pitchFactor;
+
+  // Hip roof adjustment (15% more area)
+  if (roofType === 'hip') {
+    roofArea *= 1.15;
+  }
+
+  // Shingle bundles
+  const bundlesNeeded = Math.ceil((roofArea / shingleCoverage) * (1 + wastePercent / 100));
+  const squaresNeeded = Math.ceil(bundlesNeeded / 3);
+
+  // Underlayment (assume synthetic, 1000 sq ft/roll)
+  const underlaymentRolls = Math.ceil(roofArea / 1000);
+
+  // Nails (1 lb per 100 sq ft approx)
+  const nailsNeeded = Math.ceil(roofArea / 100);
+
+  // Estimated cost
+  const estimatedCost = bundlesNeeded * 30 + underlaymentRolls * 50;
+
+  // Display results
+  document.getElementById('roofArea').textContent = Math.round(roofArea) + ' sq ft';
+  document.getElementById('shingleBundles').textContent = bundlesNeeded + ' bundles';
+  document.getElementById('shingleSquares').textContent = squaresNeeded + ' squares';
+  document.getElementById('underlaymentRolls').textContent = underlaymentRolls + ' rolls';
+  document.getElementById('nailsNeeded').textContent = nailsNeeded + ' lbs';
+  document.getElementById('estimatedCost').textContent = '$' + estimatedCost.toLocaleString();
+
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
