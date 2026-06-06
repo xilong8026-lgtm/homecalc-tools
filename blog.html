@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-12Q84R52HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-12Q84R52HT');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Improvement Blog - Tips, Guides & Calculators</title>
+  <meta name="description" content="Expert home improvement tips, DIY guides, and calculator tutorials. Learn how to estimate materials for painting, flooring, roofing, and more.">
+  <meta name="keywords" content="home improvement blog, DIY tips, paint calculator guide, flooring calculator tutorial, home renovation tips">
+  <meta name="author" content="HomeCalc.tools">
+  <link rel="canonical" href="https://xilong8026-lgtm.github.io/homecalc-tools/blog.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xilong8026-lgtm.github.io/homecalc-tools/blog.html">
+  <meta property="og:title" content="Home Improvement Blog - HomeCalc.tools">
+  <meta property="og:description" content="Expert home improvement tips, DIY guides, and calculator tutorials.">
+  <meta property="og:image" content="https://xilong8026-lgtm.github.io/homecalc-tools/og-image.jpg">
+  <meta property="og:site_name" content="HomeCalc.tools">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://xilong8026-lgtm.github.io/homecalc-tools/blog.html">
+  <meta name="twitter:title" content="Home Improvement Blog - HomeCalc.tools">
+  <meta name="twitter:description" content="Expert home improvement tips, DIY guides, and calculator tutorials.">
+  <meta name="twitter:image" content="https://xilong8026-lgtm.github.io/homecalc-tools/og-image.jpg">
+
+  <!-- Structured Data - JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Home Improvement Blog",
+    "url": "https://xilong8026-lgtm.github.io/homecalc-tools/blog.html",
+    "description": "Expert home improvement tips, DIY guides, and calculator tutorials.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "HomeCalc.tools"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Blog Page Specific Styles */
+    .blog-hero {
+      background: linear-gradient(135deg, #3182ce 0%, #f59e0b 100%);
+      color: white;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .blog-hero h1 {
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      margin-bottom: 16px;
+    }
+
+    .blog-hero p {
+      font-size: 20px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .blog-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 40px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .blog-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: var(--primary-lighter);
+    }
+
+    .blog-card-category {
+      display: inline-block;
+      background: rgba(49, 130, 206, 0.1);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .blog-card h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .blog-card h2 a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .blog-card h2 a:hover {
+      color: var(--primary);
+    }
+
+    .blog-card-excerpt {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .blog-card-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .no-posts {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--text-secondary);
+    }
+
+    .no-posts h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      .blog-hero h1 {
+        font-size: 32px;
+      }
+
+      .blog-hero p {
+        font-size: 16px;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">H</span>
+      Home<span>Calc</span>.tools
+    </a>
+    <nav>
+      <a href="index.html">Calculators</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="paint-calculator.html">Paint</a>
+      <a href="flooring-calculator.html">Flooring</a>
+      <a href="tile-calculator.html">Tile</a>
+    </nav>
+  </div>
+</header>
+
+<section class="blog-hero">
+  <h1>📝 Home Improvement Blog</h1>
+  <p>Expert tips, DIY guides, and calculator tutorials to help you estimate materials and plan your projects like a pro.</p>
+</section>
+
+<section class="blog-container">
+  <div class="blog-grid">
+
+    <!-- Blog Post 1 -->
+    <article class="blog-card">
+      <div class="blog-card-category">Paint</div>
+      <h2><a href="blog/how-to-calculate-paint.html">How to Calculate Paint Needed for a Room (Step-by-Step Guide)</a></h2>
+      <p class="blog-card-excerpt">Learn how to accurately estimate paint needed for your room. Includes wall area calculation, paint coverage rates, and waste allowance tips. Use our free paint calculator to save time!</p>
+      <div class="blog-card-meta">
+        <span>📅 June 6, 2026</span>
+        <span>⏱️ 8 min read</span>
+      </div>
+    </article>
+
+    <!-- Blog Post 2 (Placeholder) -->
+    <article class="blog-card">
+      <div class="blog-card-category">Flooring</div>
+      <h2><a href="#">Coming Soon: How to Choose the Right Flooring Material</a></h2>
+      <p class="blog-card-excerpt">Compare hardwood, laminate, vinyl, and tile flooring. Learn about durability, cost, and installation difficulty to make the best choice for your home.</p>
+      <div class="blog-card-meta">
+        <span>📅 Coming Soon</span>
+        <span>⏱️ -- min read</span>
+      </div>
+    </article>
+
+    <!-- Blog Post 3 (Placeholder) -->
+    <article class="blog-card">
+      <div class="blog-card-category">Roofing</div>
+      <h2><a href="#">Coming Soon: Roof Pitch Explained (4:12 vs 5:12 vs 6:12)</a></h2>
+      <p class="blog-card-excerpt">Understand roof pitch angles and how they affect material estimates. Includes a free roof area calculator and pitch factor chart.</p>
+      <div class="blog-card-meta">
+        <span>📅 Coming Soon</span>
+        <span>⏱️ -- min read</span>
+      </div>
+    </article>
+
+    <!-- Blog Post 4 (Placeholder) -->
+    <article class="blog-card">
+      <div class="blog-card-category">Concrete</div>
+      <h2><a href="#">Coming Soon: How Many Bags of Concrete Do I Need?</a></h2>
+      <p class="blog-card-excerpt">Calculate concrete bags needed for slabs, footings, and posts. Includes a conversion chart (80lb bags to cubic yards) and cost estimation tips.</p>
+      <div class="blog-card-meta">
+        <span>📅 Coming Soon</span>
+        <span>⏱️ -- min read</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Home<span>Calc</span>.tools</div>
+      <p class="footer-desc">Free, accurate home improvement calculators and expert DIY guides for homeowners and professionals.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 HomeCalc.tools — All calculators and blog posts are free to use.</span>
+  </div>
+</footer>
+
+</body>
+</html>
