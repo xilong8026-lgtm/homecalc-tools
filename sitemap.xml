@@ -2,74 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://xilong8026-lgtm.github.io/homecalc-tools/</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://xilong8026-lgtm.github.io/homecalc-tools/paint-calculator.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xilong8026-lgtm.github.io/homecalc-tools/flooring-calculator.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xilong8026-lgtm.github.io/homecalc-tools/tile-calculator.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xilong8026-lgtm.github.io/homecalc-tools/concrete-calculator.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xilong8026-lgtm.github.io/homecalc-tools/wallpaper-calculator.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xilong8026-lgtm.github.io/homecalc-tools/decking-calculator.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xilong8026-lgtm.github.io/homecalc-tools/roofing-calculator.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xilong8026-lgtm.github.io/homecalc-tools/gravel-calculator.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xilong8026-lgtm.github.io/homecalc-tools/fence-calculator.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xilong8026-lgtm.github.io/homecalc-tools/drywall-calculator.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xilong8026-lgtm.github.io/homecalc-tools/sod-calculator.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://xilong8026-lgtm.github.io/homecalc-tools/tools.html</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xilong8026-lgtm.github.io/homecalc-tools/blog.html</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://xilong8026-lgtm.github.io/homecalc-tools/blog/how-to-calculate-paint.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xilong8026-lgtm.github.io/homecalc-tools/blog/how-to-calculate-flooring.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xilong8026-lgtm.github.io/homecalc-tools/blog/how-to-calculate-tile.html</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xilong8026-lgtm.github.io/homecalc-tools/blog/how-to-calculate-concrete.html</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
