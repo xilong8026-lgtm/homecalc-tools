@@ -16,10 +16,12 @@
   - 内部链接：flooring-calculator.html
 
 ### 📝 第3周（6月第3周）
-- [ ] **第三篇博客** - "Tile Calculator Tutorial: Estimate Ceramic & Porcelain Tile"
+- [x] **第三篇博客** - "Tile Calculator Tutorial: Estimate Ceramic & Porcelain Tile"
   - 关键词：tile calculator, how many tiles do I need
   - 目标字数：1200-1500字
   - 内部链接：tile-calculator.html
+  - 文件：`blog/how-to-calculate-tile.html`
+  - 完成日期：2026-06-13
 
 ### 📝 第4周（6月第4周）
 - [ ] **第四篇博客** - "Concrete Calculator: How Many Bags of Concrete Do I Need?"

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tile Calculator Tutorial: How to Estimate Ceramic & Porcelain Tile</title>
+  <meta name="description" content="Learn how to calculate tile needed for floors, backsplash, and showers. Includes waste factor, grout lines, and pattern adjustments. Use our free tile calculator!">
+  <meta name="keywords" content="tile calculator, how many tiles do I need, ceramic tile calculator, porcelain tile calculator, tile estimator">
+  <meta name="author" content="HomeCalc.tools">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Tile Calculator Tutorial: Estimate Ceramic & Porcelain Tile">
+  <meta property="og:description" content="Learn how to calculate tile needed for floors, backsplash, and showers. Free tile calculator included!">
+  <meta property="og:url" content="https://xilong8026-lgtm.github.io/homecalc-tools/blog/how-to-calculate-tile.html">
+  <meta property="og:site_name" content="HomeCalc.tools Blog">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tile Calculator Tutorial: Estimate Ceramic & Porcelain Tile">
+  <meta name="twitter:description" content="Learn how to calculate tile needed. Free tile calculator included!">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://xilong8026-lgtm.github.io/homecalc-tools/blog/how-to-calculate-tile.html">
+  
+  <!-- Structured Data - JSON-LD (Article) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Tile Calculator Tutorial: How to Estimate Ceramic & Porcelain Tile",
+    "description": "Learn how to calculate tile needed for floors, backsplash, and showers. Includes waste factor, grout lines, and pattern adjustments.",
+    "author": {
+      "@type": "Organization",
+      "name": "HomeCalc.tools"
+    },
+    "datePublished": "2026-06-13",
+    "dateModified": "2026-06-13",
+    "publisher": {
+      "@type": "Organization",
+      "name": "HomeCalc.tools",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://xilong8026-lgtm.github.io/homecalc-tools/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://xilong8026-lgtm.github.io/homecalc-tools/blog/how-to-calculate-tile.html"
+    }
+  }
+  </script>
+  
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many extra tiles should I buy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Add 10% waste for simple installations. Add 15-20% for diagonal patterns, complex cuts, or if you're a beginner. Always buy from the same batch (lot number) to avoid color variations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate tile for a backsplash?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Measure the height and length of each backsplash section. Multiply to get square footage. Subtract the area of any windows or outlets. Add 10-15% waste. For subway tiles, plan your layout to avoid tiny cuts at edges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between ceramic and porcelain tile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ceramic: Made from clay, fired at lower temps, more porous, costs $1-5/sq ft. Porcelain: Made from denser clay, fired at higher temps, nearly waterproof, costs $3-10/sq ft. Porcelain is better for floors and wet areas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does it cost to tile a 100 sq ft floor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DIY (materials only): $300-800 (ceramic) or $500-1,200 (porcelain). Professional installation: $1,000-2,500 (depending on tile quality and labor rates). Labor typically costs $4-8/sq ft."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I install tile over existing tile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but only if the existing tile is firmly attached, level, and in good condition. Use a primer designed for tiling over tile. The added thickness may affect doors and transitions. Removing old tile is usually better for a long-lasting installation."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      font-size: 2.2em;
+      margin: 20px 0;
+      color: #2c3e50;
+      line-height: 1.3;
+    }
+    
+    h2 {
+      font-size: 1.6em;
+      margin: 30px 0 15px 0;
+      color: #34495e;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 8px;
+    }
+    
+    h3 {
+      font-size: 1.3em;
+      margin: 25px 0 12px 0;
+      color: #555;
+    }
+    
+    p {
+      margin: 15px 0;
+      font-size: 1.05em;
+    }
+    
+    .meta {
+      color: #777;
+      font-size: 0.9em;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .toc {
+      background: #f8f9fa;
+      border-left: 4px solid #3498db;
+      padding: 15px 20px;
+      margin: 25px 0;
+      border-radius: 4px;
+    }
+    
+    .toc h3 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    
+    .toc ul {
+      margin-left: 20px;
+    }
+    
+    .toc li {
+      margin: 8px 0;
+    }
+    
+    .tip-box {
+      background: #e8f4f8;
+      border-left: 4px solid #3498db;
+      padding: 15px 20px;
+      margin: 25px 0;
+      border-radius: 4px;
+    }
+    
+    .tip-box strong {
+      color: #2c3e50;
+    }
+    
+    .step {
+      background: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+    
+    .step-number {
+      display: inline-block;
+      background: #3498db;
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 35px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    
+    .step h3 {
+      display: inline;
+      color: #2c3e50;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.95em;
+    }
+    
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    
+    th {
+      background: #3498db;
+      color: white;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    
+    .cta-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 35px 0;
+    }
+    
+    .cta-box h3 {
+      color: white;
+      margin-top: 0;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: #667eea;
+      padding: 14px 32px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: transform 0.3s;
+    }
+    
+    .cta-button:hover {
+      transform: scale(1.05);
+    }
+    
+    .faq-section {
+      margin: 40px 0;
+      padding: 25px;
+      background: #f9f9f9;
+      border-radius: 12px;
+    }
+    
+    .faq-item {
+      margin: 20px 0;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      border-left: 3px solid #3498db;
+    }
+    
+    .faq-item h3 {
+      margin-top: 0;
+      color: #2c3e50;
+      font-size: 1.1em;
+    }
+    
+    .related-links {
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 30px 0;
+    }
+    
+    .related-links h3 {
+      margin-top: 0;
+    }
+    
+    .related-links ul {
+      margin-left: 20px;
+    }
+    
+    .related-links li {
+      margin: 10px 0;
+    }
+    
+    blockquote {
+      background: #fff8e1;
+      border-left: 4px solid #ffc107;
+      padding: 15px 20px;
+      margin: 20px 0;
+      font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+      
+      h1 {
+        font-size: 1.7em;
+      }
+      
+      h2 {
+        font-size: 1.4em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <h1>Tile Calculator Tutorial: How to Estimate Ceramic & Porcelain Tile</h1>
+  
+  <div class="meta">
+    Published: June 13, 2026 | Updated: June 13, 2026 | By HomeCalc.tools
+  </div>
+  
+  <!-- Table of Contents -->
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <ul>
+      <li><a href="#why-important">Why Accurate Tile Estimation Matters</a></li>
+      <li><a href="#materials-needed">Materials Needed for Tile Installation</a></li>
+      <li><a href="#step-by-step">Step-by-Step Calculation Guide</a></li>
+      <li><a href="#waste-factor">Understanding Waste Factor</a></li>
+      <li><a href="#grout-lines">Grout Line Considerations</a></li>
+      <li><a href="#pattern-adjustments">Pattern Adjustments (Diagonal, Herringbone)</a></li>
+      <li><a href="#common-mistakes">Common Mistakes to Avoid</a></li>
+      <li><a href="#cost-estimation">Cost Estimation</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+    </ul>
+  </div>
+  
+  <!-- Introduction -->
+  <p>Planning a tile installation project? Whether you're tiling a floor, backsplash, or shower, accurate material estimation is crucial. Order too little, and you'll face delays and potential batch color variations. Order too much, and you've wasted money on unused materials.</p>
+  
+  <p>In this comprehensive guide, you'll learn how to calculate tile needed for any project. We'll cover measuring techniques, waste factors, grout lines, pattern adjustments, and cost estimation. Plus, we'll show you how to use our <a href="../tile-calculator.html">free tile calculator</a> to save time and avoid mistakes.</p>
+  
+  <div class="tip-box">
+    <strong>💡 Pro Tip:</strong> Always buy 10-20% extra tile, even if calculations say you don't need it. Future repairs will be much easier if you have matching tiles from the same production batch.
+  </div>
+  
+  <!-- Section 1: Why Accurate Tile Estimation Matters -->
+  <h2 id="why-important">Why Accurate Tile Estimation Matters</h2>
+  
+  <p>Tile is sold by the box, not by individual pieces. Each box covers a specific square footage (e.g., 10-15 sq ft for floor tile, 8-12 sq ft for wall tile). If you underestimate, you may run out of tiles mid-project. If you overestimate, you're stuck with expensive leftover materials.</p>
+  
+  <p>Here's why accurate estimation is critical:</p>
+  
+  <ul style="margin-left: 25px; margin-top: 15px;">
+    <li><strong>Avoid project delays:</strong> Running out of tiles means a trip to the store (or waiting for delivery), which can delay your project by days.</li>
+    <li><strong>Prevent color variations:</strong> Tiles from different production batches (lot numbers) may have slight color differences. Buying enough from the same batch ensures consistency.</li>
+    <li><strong>Save money:</strong> Tile is expensive. Ordering 10-20% extra is cheaper than ordering a few boxes later (due to delivery fees and potential price increases).</li>
+    <li><strong>Plan for repairs:</strong> Having extra tiles from the same batch makes future repairs invisible.</li>
+  </ul>
+  
+  <!-- Section 2: Materials Needed -->
+  <h2 id="materials-needed">Materials Needed for Tile Installation</h2>
+  
+  <p>Before calculating tile quantity, you need to account for all materials required for a complete installation:</p>
+  
+  <table>
+    <tr>
+      <th>Material</th>
+      <th>Purpose</th>
+      <th>Typical Coverage</th>
+    </tr>
+    <tr>
+      <td>Tile</td>
+      <td>Surface covering</td>
+      <td>Varies by size (e.g., 12"×12" tile covers 1 sq ft each)</td>
+    </tr>
+    <tr>
+      <td>Thin-set mortar</td>
+      <td>Adhesive for tile</td>
+      <td>50-100 sq ft per 50lb bag (depends on trowel size)</td>
+    </tr>
+    <tr>
+      <td>Grout</td>
+      <td>Fills joints between tiles</td>
+      <td>50-200 sq ft per 25lb box (depends on joint width)</td>
+    </tr>
+    <tr>
+      <td>Backer board</td>
+      <td>Base layer for floors</td>
+      <td>3×5 ft sheets (15 sq ft each)</td>
+    </tr>
+    <tr>
+      <td>Sealer</td>
+      <td>Protects grout (optional)</td>
+      <td>100-200 sq ft per bottle</td>
+    </tr>
+  </table>
+  
+  <p>For this tutorial, we'll focus on calculating <strong>tile quantity</strong>. Use our <a href="../tile-calculator.html">tile calculator</a> to get accurate estimates for all materials.</p>
+  
+  <!-- Section 3: Step-by-Step Calculation Guide -->
+  <h2 id="step-by-step">Step-by-Step Calculation Guide</h2>
+  
+  <div class="step">
+    <span class="step-number">1</span><h3>Measure the Area</h3>
+    <p>Measure the length and width of the area you want to tile. For rectangular rooms, multiply length × width to get square footage.</p>
+    <p><strong>Example:</strong> A 10×12 ft room = 120 sq ft.</p>
+    <p>For irregular shapes (L-shaped rooms, angled walls), divide the area into rectangles, calculate each separately, then add them together.</p>
+  </div>
+  
+  <div class="step">
+    <span class="step-number">2</span><h3>Subtract Fixed Objects</h3>
+    <p>If there are areas within your tiled space that won't be tiled (e.g., a kitchen island, toilet, or built-in cabinet), subtract their square footage from the total.</p>
+    <p><strong>Example:</strong> A 3×4 ft kitchen island = 12 sq ft. 120 sq ft - 12 sq ft = 108 sq ft.</p>
+  </div>
+  
+  <div class="step">
+    <span class="step-number">3</span><h3>Add Waste Factor</h3>
+    <p>Add 10-20% extra tile to account for cuts, breakage, and future repairs. The exact amount depends on:</p>
+    <ul style="margin-left: 25px; margin-top: 10px;">
+      <li><strong>Room shape:</strong> Simple rectangles need 10% waste. Complex shapes (diagonal patterns, many corners) need 15-20%.</li>
+      <li><strong>Tile size:</strong> Larger tiles (12"×24") produce more waste when cut. Add extra 5%.</li>
+      <li><strong>Skill level:</strong> Beginners should add 15-20% to account for mistakes.</li>
+    </ul>
+    <p><strong>Calculation:</strong> 108 sq ft × 1.10 (10% waste) = 118.8 sq ft.</p>
+  </div>
+  
+  <div class="step">
+    <span class="step-number">4</span><h3>Calculate Number of Tiles</h3>
+    <p>Divide the total square footage (including waste) by the coverage per tile. Most tiles list their size on the box (e.g., "12×12" means 1 sq ft per tile).</p>
+    <p><strong>Example:</strong> 118.8 sq ft ÷ 1 sq ft/tile = 118.8 → 119 tiles.</p>
+    <p>If tiles are sold by the box, divide the number of tiles by the box quantity, then round up to the nearest whole box.</p>
+    <p><strong>Example:</strong> If each box contains 10 tiles: 119 ÷ 10 = 11.9 → 12 boxes.</p>
+  </div>
+  
+  <div class="step">
+    <span class="step-number">5</span><h3>Account for Grout Lines</h3>
+    <p>Grout lines reduce the effective coverage of each tile. If your tiles are 12"×12" with 1/8" grout lines, the effective coverage per tile is slightly less than 1 sq ft.</p>
+    <p>Use our <a href="../tile-calculator.html">tile calculator</a> to automatically adjust for grout lines. Simply enter your tile size and grout width, and the calculator will give you the exact number of tiles needed.</p>
+  </div>
+  
+  <!-- Section 4: Waste Factor -->
+  <h2 id="waste-factor">Understanding Waste Factor</h2>
+  
+  <p>Waste factor is the percentage of extra material you need to account for cuts, breakage, and mistakes. Here's a detailed breakdown:</p>
+  
+  <table>
+    <tr>
+      <th>Project Type</th>
+      <th>Recommended Waste</th>
+      <th>Reason</th>
+    </tr>
+    <tr>
+      <td>Simple rectangular floor</td>
+      <td>10%</td>
+      <td>Few cuts needed</td>
+    </tr>
+    <tr>
+      <td>Rectangular floor with corners</td>
+      <td>12-15%</td>
+      <td>More cuts required</td>
+    </tr>
+    <tr>
+      <td>Diagonal pattern</td>
+      <td>15-20%</td>
+      <td>Many angled cuts</td>
+    </tr>
+    <tr>
+      <td>Herringbone pattern</td>
+      <td>20%</td>
+      <td>Complex cuts at edges</td>
+    </tr>
+    <tr>
+      <td>Backsplash (subway tile)</td>
+      <td>10-15%</td>
+      <td>Vertical and horizontal cuts</td>
+    </tr>
+    <tr>
+      <td>Shower (walls + floor)</td>
+      <td>15-20%</td>
+      <td>Many small cuts around fixtures</td>
+    </tr>
+  </table>
+  
+  <blockquote>
+    <strong>Important:</strong> Always round up to the nearest whole tile or box. You can't buy partial boxes, and having a few extra tiles is much better than running out.
+  </blockquote>
+  
+  <!-- Section 5: Grout Lines -->
+  <h2 id="grout-lines">Grout Line Considerations</h2>
+  
+  <p>Grout lines are the spaces between tiles that are filled with grout. They affect both the look of your installation and the number of tiles needed.</p>
+  
+  <h3>Standard Grout Line Widths</h3>
+  <ul style="margin-left: 25px;">
+    <li><strong>Floor tile:</strong> 1/8" to 3/16" (wider for uneven tiles)</li>
+    <li><strong>Wall tile:</strong> 1/16" to 1/8" (tighter for aesthetic reasons)</li>
+    <li><strong>Large-format tile (12"×24" or bigger):</strong> 1/4" to 3/8" (required for lippage control)</li>
+  </ul>
+  
+  <h3>How Grout Lines Affect Tile Quantity</h3>
+  <p>Grout lines reduce the effective coverage per tile. For example:</p>
+  <ul style="margin-left: 25px; margin-top: 10px;">
+    <li>A 12"×12" tile with no grout covers exactly 1 sq ft.</li>
+    <li>The same tile with 1/8" grout lines covers (11.875" × 11.875") = 0.977 sq ft.</li>
+    <li>For a 120 sq ft room, you'd need 120 ÷ 0.977 = 122.8 → 123 tiles (instead of 120).</li>
+  </ul>
+  
+  <p>Our <a href="../tile-calculator.html">tile calculator</a> automatically adjusts for grout lines. Simply enter your tile size and grout width, and the calculator will give you the exact quantity needed.</p>
+  
+  <!-- Section 6: Pattern Adjustments -->
+  <h2 id="pattern-adjustments">Pattern Adjustments (Diagonal, Herringbone)</h2>
+  
+  <p>The pattern you choose affects the amount of waste (and therefore the number of tiles needed).</p>
+  
+  <h3>1. Straight Pattern (Grid)</h3>
+  <p>Tiles are aligned in straight rows and columns. This is the most efficient pattern, with minimal waste.</p>
+  <p><strong>Waste factor:</strong> 10% for simple rooms.</p>
+  
+  <h3>2. Diagonal Pattern (45°)</h3>
+  <p>Tiles are installed at a 45-degree angle to the walls. This creates a more dynamic look but requires more cuts at the edges.</p>
+  <p><strong>Waste factor:</strong> 15-20%.</p>
+  
+  <h3>3. Herringbone Pattern</h3>
+  <p>Tiles are arranged in a V-shaped pattern (like a fish bone). This is popular for backsplashes and accent walls but requires many cuts.</p>
+  <p><strong>Waste factor:</strong> 20%.</p>
+  
+  <h3>4. Brick Pattern (Running Bond)</h3>
+  <p>Rectangular tiles are offset by 50% (like bricks in a wall). This pattern is forgiving of tile size variations.</p>
+  <p><strong>Waste factor:</strong> 10-15%.</p>
+  
+  <div class="tip-box">
+    <strong>💡 Pro Tip:</strong> Create a "cutting plan" before starting. Lay out your tiles on the floor (without adhesive) to see how they'll fit. This helps you avoid tiny cuts at the edges (which look unprofessional).
+  </div>
+  
+  <!-- Section 7: Common Mistakes to Avoid -->
+  <h2 id="common-mistakes">Common Mistakes to Avoid</h2>
+  
+  <p>Even experienced DIYers make mistakes when estimating tile. Here are the most common pitfalls:</p>
+  
+  <h3>1. Not Ordering from the Same Batch</h3>
+  <p>Tiles from different production batches may have slight color variations. Always check the lot number on the box and buy all your tiles from the same batch.</p>
+  
+  <h3>2. Forgetting About Doorways and Transitions</h3>
+  <p>If your tiled floor meets another flooring type (e.g., hardwood in the hallway), you'll need transition strips. Account for the space these strips occupy (usually 1-2 inches).</p>
+  
+  <h3>3. Ignoring Tile Direction</h3>
+  <p>Some tiles have a directional pattern (e.g., wood-look tile). Make sure you have enough tiles to maintain the pattern direction throughout the room.</p>
+  
+  <h3>4. Not Having Extra Tiles for Repairs</h3>
+  <p>Tiles crack, chip, or stain over time. Having 2-3 extra boxes (stored in a cool, dry place) makes future repairs much easier. You won't find matching tiles years later if your batch is discontinued.</p>
+  
+  <h3>5. Forgetting About Trim Pieces</h3>
+  <p>If your tile edges are exposed (e.g., at a doorway or against a wall), you'll need bullnose tiles or metal trim. These are sold separately, so don't forget to include them in your estimate.</p>
+  
+  <!-- Section 8: Cost Estimation -->
+  <h2 id="cost-estimation">Cost Estimation</h2>
+  
+  <p>Once you know how many tiles you need, you can estimate the total cost of your project.</p>
+  
+  <h3>Tile Costs (Materials Only)</h3>
+  <table>
+    <tr>
+      <th>Tile Type</th>
+      <th>Cost per Sq Ft</th>
+      <th>Cost for 120 Sq Ft Room</th>
+    </tr>
+    <tr>
+      <td>Ceramic (basic)</td>
+      <td>$1-3</td>
+      <td>$120-360</td>
+    </tr>
+    <tr>
+      <td>Ceramic (premium)</td>
+      <td>$3-7</td>
+      <td>$360-840</td>
+    </tr>
+    <tr>
+      <td>Porcelain (basic)</td>
+      <td>$3-6</td>
+      <td>$360-720</td>
+    </tr>
+    <tr>
+      <td>Porcelain (premium)</td>
+      <td>$6-12</td>
+      <td>$720-1,440</td>
+    </tr>
+    <tr>
+      <td>Natural stone (marble, travertine)</td>
+      <td>$10-25</td>
+      <td>$1,200-3,000</td>
+    </tr>
+  </table>
+  
+  <h3>Other Materials</h3>
+  <ul style="margin-left: 25px; margin-top: 10px;">
+    <li><strong>Thin-set mortar:</strong> $15-25 per 50lb bag (covers 50-100 sq ft)</li>
+    <li><strong>Grout:</strong> $15-30 per 25lb box (covers 100-200 sq ft)</li>
+    <li><strong>Backer board:</strong> $10-15 per 3×5 ft sheet</li>
+    <li><strong>Sealer:</strong> $20-40 per bottle (covers 100-200 sq ft)</li>
+  </ul>
+  
+  <h3>Professional Installation</h3>
+  <p>If you're hiring a pro, labor costs typically range from $4-12 per sq ft (depending on your location and the complexity of the job).</p>
+  <p><strong>Total cost for 120 sq ft room (installed):</strong></p>
+  <ul style="margin-left: 25px; margin-top: 10px;">
+    <li>Ceramic: $600-1,800 (materials) + $480-1,440 (labor) = $1,080-3,240</li>
+    <li>Porcelain: $800-2,000 (materials) + $480-1,440 (labor) = $1,280-3,440</li>
+  </ul>
+  
+  <!-- CTA Box -->
+  <div class="cta-box">
+    <h3>Skip the Math — Use Our Free Tile Calculator!</h3>
+    <p>Our tile calculator automatically accounts for waste, grout lines, and pattern adjustments. Get accurate estimates in seconds.</p>
+    <a href="../tile-calculator.html" class="cta-button">Try Tile Calculator Now →</a>
+  </div>
+  
+  <!-- Section 9: FAQ -->
+  <h2 id="faq">Frequently Asked Questions</h2>
+  
+  <div class="faq-section">
+    <div class="faq-item">
+      <h3>How many extra tiles should I buy?</h3>
+      <p>Add 10% waste for simple installations. Add 15-20% for diagonal patterns, complex cuts, or if you're a beginner. Always buy from the same batch (lot number) to avoid color variations.</p>
+    </div>
+    
+    <div class="faq-item">
+      <h3>How do I calculate tile for a backsplash?</h3>
+      <p>Measure the height and length of each backsplash section. Multiply to get square footage. Subtract the area of any windows or outlets. Add 10-15% waste. For subway tiles, plan your layout to avoid tiny cuts at edges.</p>
+    </div>
+    
+    <div class="faq-item">
+      <h3>What's the difference between ceramic and porcelain tile?</h3>
+      <p>Ceramic: Made from clay, fired at lower temps, more porous, costs $1-5/sq ft. Porcelain: Made from denser clay, fired at higher temps, nearly waterproof, costs $3-10/sq ft. Porcelain is better for floors and wet areas.</p>
+    </div>
+    
+    <div class="faq-item">
+      <h3>How much does it cost to tile a 100 sq ft floor?</h3>
+      <p>DIY (materials only): $300-800 (ceramic) or $500-1,200 (porcelain). Professional installation: $1,000-2,500 (depending on tile quality and labor rates). Labor typically costs $4-8/sq ft.</p>
+    </div>
+    
+    <div class="faq-item">
+      <h3>Can I install tile over existing tile?</h3>
+      <p>Yes, but only if the existing tile is firmly attached, level, and in good condition. Use a primer designed for tiling over tile. The added thickness may affect doors and transitions. Removing old tile is usually better for a long-lasting installation.</p>
+    </div>
+  </div>
+  
+  <!-- Related Links -->
+  <div class="related-links">
+    <h3>Related Calculators & Guides</h3>
+    <ul>
+      <li><a href="../tile-calculator.html">Tile Calculator (Free Tool)</a></li>
+      <li><a href="../flooring-calculator.html">Flooring Calculator (Compare Tile vs. Other Materials)</a></li>
+      <li><a href="how-to-calculate-paint.html">How to Calculate Paint Needed (Preparation Guide)</a></li>
+      <li><a href="how-to-calculate-flooring.html">How to Calculate Flooring (Complete Guide)</a></li>
+    </ul>
+  </div>
+  
+  <!-- Footer -->
+  <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid #eee; text-align: center; color: #777; font-size: 0.9em;">
+    <p>© 2026 HomeCalc.tools | <a href="../index.html">Back to Home</a> | <a href="../blog.html">Blog Home</a></p>
+    <p><strong>Disclaimer:</strong> This guide is for estimation purposes only. Always consult with a professional installer for critical projects.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
