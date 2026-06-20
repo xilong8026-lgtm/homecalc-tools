@@ -10,10 +10,12 @@
   - 字数：~1500字
 
 ### 📝 第2周（6月第2周）
-- [ ] **第二篇博客** - "Flooring Calculator Guide: How Much Flooring Do You Need?"
+- [x] **第二篇博客** - "Flooring Calculator Guide: How Much Flooring Do You Need?"
   - 关键词：flooring calculator, how much laminate flooring do I need
   - 目标字数：1200-1500字
   - 内部链接：flooring-calculator.html
+  - 文件：`blog/how-to-calculate-flooring.html`
+  - 完成日期：2026-06-11
 
 ### 📝 第3周（6月第3周）
 - [x] **第三篇博客** - "Tile Calculator Tutorial: Estimate Ceramic & Porcelain Tile"
@@ -24,24 +26,32 @@
   - 完成日期：2026-06-13
 
 ### 📝 第4周（6月第4周）
-- [ ] **第四篇博客** - "Concrete Calculator: How Many Bags of Concrete Do I Need?"
+- [x] **第四篇博客** - "Concrete Calculator: How Many Bags of Concrete Do I Need?"
   - 关键词：concrete calculator, how much concrete do I need
   - 目标字数：1200-1500字
   - 内部链接：concrete-calculator.html
+  - 文件：`blog/how-to-calculate-concrete.html`
+  - 完成日期：2026-06-13
 
 ---
 
 ## 📅 第2个月（7月） - 中级内容
 
 ### 📝 第5周（7月第1周）
-- [ ] **第五篇博客** - "Roofing Calculator Guide: Estimate Shingles & Materials"
+- [x] **第五篇博客** - "Roofing Calculator Guide: Estimate Shingles & Materials"
   - 关键词：roofing calculator, how many shingles do I need
   - 目标字数：1500-2000字
   - 内部链接：roofing-calculator.html
+  - 文件：`blog/how-to-calculate-roofing.html`
+  - 完成日期：2026-06-20
 
 ### 📝 第6周（7月第2周）
-- [ ] **第六篇博客** - "Gravel Calculator: How Much Gravel for Driveway?"
+- [x] **第六篇博客** - "Gravel Calculator: How Much Gravel for Driveway?"
   - 关键词：gravel calculator, how much gravel do I need
+  - 目标字数：1200-1500字
+  - 内部链接：gravel-calculator.html
+  - 文件：`blog/how-to-calculate-gravel.html`
+  - 完成日期：2026-06-20
   - 目标字数：1200-1500字
   - 内部链接：gravel-calculator.html
 
