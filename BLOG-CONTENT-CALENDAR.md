@@ -56,10 +56,12 @@
   - 内部链接：gravel-calculator.html
 
 ### 📝 第7周（7月第3周）
-- [ ] **第七篇博客** - "Fence Calculator: Estimate Posts, Rails & Pickets"
+- [x] **第七篇博客** - "Fence Calculator: Estimate Posts, Rails & Pickets"
   - 关键词：fence calculator, how much fence do I need
   - 目标字数：1200-1500字
   - 内部链接：fence-calculator.html
+  - 文件：`blog/how-to-calculate-fence.html`
+  - 完成日期：2026-07-11
 
 ### 📝 第8周（7月第4周）
 - [ ] **第八篇博客** - "Drywall Calculator: How Many Drywall Sheets Do I Need?"
